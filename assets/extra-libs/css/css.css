@@ -1,0 +1,324 @@
+/***Estilos MVA****/
+/*Estilos para el inptu file start */
+.input-file-container {
+  position: relative;
+  width: 225px;
+}
+
+.input-file-trigger {
+  /* display: block; */
+  padding: 6px 40px;
+  background: black;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.input-file:hover+.input-file-trigger,
+.input-file:focus+.input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+  background: #46525f;
+  color: #faed00;
+}
+
+/*Estilos para el inptu file end */
+
+/*Estilos botonos start*/
+
+.btn__bg {
+  background-color: black;
+  color: white;
+}
+
+.btn__bg:hover {
+  background-color: #46525f;
+  color: #f5ed55d7;
+}
+
+.btn__bg2:hover {
+  background-color: grey;
+  color: #f5ed55d7;
+}
+
+.btn__bg3:hover {
+  color: black;
+}
+
+
+/*Estilos botones end*/
+
+/*Esilos de div de configuracion.php start*/
+
+.divConfig {
+  margin: 0 3em 0 3em;
+  border-left: solid 5px black;
+}
+
+.divCardConfig:hover {
+  box-shadow: -2px 2px 5px black;
+}
+
+/*Estilos de div de configuracion.php end*/
+
+/*Estilos de boton de estatus*/
+.botoncito {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 1.3rem;
+}
+
+.botoncito input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+}
+
+.deslizadora {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 10px;
+}
+
+.deslizadora:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.1rem;
+  background-color: black;
+  transition: .4s;
+  border-radius: 100%;
+  z-index: 1000;
+  left: 0rem;
+}
+
+input:checked+.deslizadora {
+  background-color: grey;
+}
+
+input:checked+.deslizadora:before {
+  transform: translateX(1.2rem);
+}
+
+/*Estilos de boton de status*/
+
+.inputs {
+  border: white;
+  border-bottom: solid;
+  border-radius: 9px;
+  text-align: center;
+  width: -webkit-fill-available;
+}
+
+.inputs:focus {
+  border: white;
+  box-shadow: 0em 4px 0.4em #faed00;
+  border-radius: 9px;
+}
+
+.inputs-sm:focus {
+  border: white;
+  box-shadow: 0em 4px 0.4em #faed00;
+  width: 7em;
+  border-radius: 9px;
+}
+
+.inputs-sm {
+  border: white;
+  border-bottom: solid;
+  border-radius: 12px;
+  text-align: center;
+  width: 7em;
+}
+
+/*Estilos div para paginaa de permisos*/
+.divpermiso {
+  margin: 4em 0em 0em 18em;
+
+}
+
+.divpermiso__bg {
+
+  margin: -0.5em -0.5em 0em -0.5em;
+}
+
+.divtext {
+
+  padding: 0.5em 0em 0em 0.5em;
+  text-align: justify;
+
+}
+
+/***********PRUEBA 3*********/
+/* CHECKLIST */
+mark {
+  background-color: transparent;
+  color: #7a7272;
+}
+
+.checkbox {
+  direction: rtl;
+  position: relative;
+  line-height: 0;
+}
+
+.checkbox:after {
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+
+.checkbox input,
+.checkbox .label,
+.checkbox .check {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox .label {
+  max-width: 200px;
+}
+
+.checkbox .check {
+  position: relative;
+}
+
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  border-color: #232323;
+}
+
+.checkbox input[type="checkbox"]:focus {
+  outline: 0;
+}
+
+.checkbox input[type="checkbox"]:checked+.check-container .check-off {
+  border-color: black;
+}
+
+.checkbox input[type="checkbox"]:checked+.check-container .check-on:after {
+  content: "✓";
+  color: black;
+  position: absolute;
+  font-size: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.checkbox input[type="checkbox"]+.check-container {
+  width: auto;
+  position: relative;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  top: 2px;
+  pointer-events: none;
+}
+
+.checkbox input[type="checkbox"]+.check-container .check-off {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0;
+  top: 0;
+  border-radius: 2px;
+  border: 2px solid #232323;
+  transition: border-color ease 0.28s;
+}
+
+.task-list {
+  position: relative;
+  padding: 15px 25px;
+}
+
+.task-list mark {
+  color: #232323;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.task-list time {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.task-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.task-list ul li {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  padding: 15px 0;
+  position: relative;
+  margin: 0;
+}
+
+.task-list ul li .label {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  margin-bottom: 2px;
+  line-height: 1.2;
+  direction: ltr;
+  text-align: left;
+  opacity: 1;
+  max-width: unset;
+}
+
+.task-list ul li.task-checked .label {
+  opacity: 0.5;
+}
+
+.task-list.current ul li {
+  border-top: 1px solid #b2b4b9;
+}
+
+.task-list.current ul li:first-child {
+  border-top: 0;
+}
+
+/*Boton inciio*/
+.btnInicio {
+  background-color: #b3aa11;
+  color: white;
+}
+
+.btnInicio:hover {
+  background-color: #b3ab11b6;
+}
+
+p {
+  font-size: 18px;
+}

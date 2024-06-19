@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.custom-input {
+  border: none;
+  background-color: transparent;
+  /* Hace que el fondo del input sea transparente */
+  outline: none;
+  /* Quita el resplandor al hacer clic */
+}
+
+.custom-input:focus {
+  border: none;
+  /* Asegura que no haya borde cuando está enfocado */
+  box-shadow: none;
+  /* Quita cualquier sombra al hacer clic */
+}
+
+.custom-input:focus+.line {
+  background-color: green;
+  /* Cambia el color de la línea al hacer clic */
+}
+
+.line {
+  height: 2px;
+  /* Altura de la línea */
+  background-color: #6c757d;
+  /* Color predeterminado de la línea */
+  transition: background-color 0.3s;
+  /* Transición suave para el cambio de color */
+}
+
+.input-text-form{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom:0;
+    font-weight:normal;
+}
+
+.text-tittle-card{
+    color:white; font-family: 'Montserrat';
+    font-size: 40px;
+}
+
+.color-text-white{
+    color:white;
+}
+
+.custom-select {
+    border: none; /* Eliminar el borde del select */
+    border-bottom: 2px solid #6c757d; /* Línea inferior verde */
+    border-radius: 0; /* Eliminar la esquina redondeada */
+    background-color: transparent; /* Fondo transparente */
+    -webkit-appearance: none; /* Eliminar la apariencia predeterminada de iOS */
+    -moz-appearance: none; /* Eliminar la apariencia predeterminada de Firefox */
+    appearance: none; /* Eliminar la apariencia predeterminada */
+  }
+
+  .custom-select:focus {
+    outline: none; /* Eliminar el contorno al enfocar el select */
+    border-bottom-color: transparent; /* Quitar la línea inferior al enfocar */
+  }
+  
+
+      /* Estilo para el contenedor del campo de carga de archivos */
+      .custom-file-container {
+        border: 2px dashed #aaa;
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+  
+      /* Estilo para el icono de subir archivo */
+      .custom-file-icon {
+        font-size: 48px;
+        color: #aaa;
+      }
+  
+      /* Estilo para las leyendas */
+      .custom-file-caption {
+        font-size: 16px;
+        color: #333;
+        margin-top: 10px;
+      }
+  
+      .custom-file-hint {
+        font-size: 14px;
+        color: #777;
+        margin-top: 5px;
+      }
+  
+      /* Estilo para el nombre del archivo */
+      .custom-file-name {
+        font-size: 14px;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      .custom-alert {
+        box-shadow: 0 0 2px rgba(0,0,0,0.5); /* Sombra en los cuatro lados */
+        border-left: 3px solid 		#e49800; /* Cambia el color de la línea vertical */
+        border-radius: 5px;
+        padding: 15px;
+        margin: 20px;
+      }
+  
+      .custom-alert p {
+        margin-bottom: 0;
+      }

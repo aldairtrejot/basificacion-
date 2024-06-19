@@ -1,0 +1,183 @@
+
+  /*COLORES DE FONDO*/
+  .color-background-verde{
+
+  }
+
+  .color-background-amarrillo{
+    background-color:  #BC955C;
+  }
+
+  .color-text-white{
+    color:white;
+  }
+
+  .color-text-tittle {
+    color:white;
+    background: #235B4E
+  }
+
+  /*
+    CAMBIAR EL COLOR DE BORDE DE INPUT
+  */
+    .form-control:focus {
+    border-color: #BC955C;
+            /* Cambia el color del borde */
+    background-color: white;
+            /* Cambia el color de fondo */
+    box-shadow: none;
+            /* Remueve la sombra de enfoque predeterminada */
+        }
+
+    
+    .search-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    /*
+    ICONO DE BUSQUEDA
+    */
+    .search-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      /*color:#BC955C*/
+    }
+
+    /*
+    ANIMACION DE BUSQUEDA
+    */
+    .custom-input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.3s, background-color 0.3s; /* Animación suave */
+    }
+
+    /*ESTILOS DE TITULO DE TABLA*/
+    .custom-text-table-tittle {
+      font-size: 1rem; /* Ajusta este valor según tus necesidades */
+      color: white;    /* Cambia este valor para ajustar el color del texto */
+    }
+
+    .table-tittle-color {
+      background-color:#235B4E;
+    }
+    
+    /*
+    TAMAÑO DE FILAS DE TABLA
+    */
+    .table-small-rows tbody tr td {
+      padding: 0.50rem; /* Ajusta este valor según tus necesidades */
+    }
+
+    /*
+      COLOR DE BOTONES DE TABLA
+    */
+    .table-button-style{
+      border:#BC955C;
+      color:white; 
+      background:#BC955C
+    }
+
+    /*COLOR BOTON ELIMINAR*/
+    .button-table-on-delete{
+      color: #9F2241;
+    }
+
+    /*COLOR DE OTROS BOTONES DE LA TABLA*/
+    .button-table-other{
+      /*color: #063940;*/
+    }
+
+    
+    .boton-con-imagen {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+  }
+
+  .boton-con-imagen img {
+      width: 35px;
+      /* ajusta el tamaño según lo necesites */
+      height: auto;
+      /* mantiene la proporción original */
+  }
+
+  .boton-con-imagen_table {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.boton-con-imagen_table img {
+    width: 23px;
+    /* ajusta el tamaño según lo necesites */
+    height: auto;
+    /* mantiene la proporción original */
+}
+
+
+
+  .btn-circle.btn-xl {
+    width: 50px;
+    height: 50px;
+    padding: 3px 7px;
+    border-radius: 35px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+  }
+
+  .nav-tabs .nav-item {
+    margin-right: 15px;
+    /* Ajusta este valor según tus necesidades */
+}
+
+.nav-tabs .nav-link {
+    padding-left: 10px;
+    /* Ajusta este valor según tus necesidades */
+    padding-right: 10px;
+    /* Ajusta este valor según tus necesidades */
+}
+
+.color-butto-modulo{
+  background-color:  white; 
+  color: black; 
+}
+
+
+    
+.boton-con-imagen-agregar {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.boton-con-imagen-agregar img {
+  width: 30px;
+  /* ajusta el tamaño según lo necesites */
+  height: auto;
+  /* mantiene la proporción original */
+}
+
+.alert-style{
+    background:none; 
+    overflow: hidden;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid #235B4E;
+}
