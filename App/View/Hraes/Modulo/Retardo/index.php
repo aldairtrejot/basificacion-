@@ -1,9 +1,9 @@
 <div class="row font-size-modulo">
     <div class="col-9">
         <div class="form-inline">
-            <button onclick="agregarEditarRetardo(null)" class="btn btn-light"><i
+            <button onclick="asitenciaEmpleado()" class="btn btn-light"><i
                     class="fa fa-plus icon-size-add"></i>
-                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar retardo</span>
+                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar asistencia</span>
             </button>
         </div>
     </div>

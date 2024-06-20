@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/Mexico_City');
 $timestamp = date('Y-m-d H:i:s');
 class BitacoraM
 {

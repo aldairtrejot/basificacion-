@@ -173,3 +173,33 @@ function iniciarTabla(buscar, id_tbl_empleados_hraes) { ///INGRESA LA TABLA
 
 
 */
+
+
+function asitenciaEmpleado(){
+    Swal.fire({
+        title: "¿Confirmar registro de asistencia?",
+        text: "",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirmar",
+        cancelButtonText: "Cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+        $.post("../../../../App/Controllers/Hrae/EmpleadoC/AsistenciaC.php", {
+                id_object: id_tbl_empleados_hraes
+            },
+            function (data) {
+                console.log(data);
+                if (data == 'success'){
+                    mensajeExito('Asistencia registrada con éxito')
+                } else {
+                    mensajeError(mensajeSalida);
+                }
+                buscarRetardo();
+            }
+        );
+    }
+    });
+  }

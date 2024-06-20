@@ -181,3 +181,32 @@ function convertirAMayusculas(event, inputId) {
   function validarNumero(input) {
     input.value = input.value.replace(/[^\d]/g, '');
   }
+
+  function asitenciaEmpleado(id){
+    Swal.fire({
+        title: "¿Confirmar registro de asistencia?",
+        text: "",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirmar",
+        cancelButtonText: "Cancelar"
+      }).then((result) => {
+        if (result.isConfirmed) {
+        $.post("../../../../App/Controllers/Hrae/EmpleadoC/AsistenciaC.php", {
+                id_object: id
+            },
+            function (data) {
+                console.log(data);
+                if (data == 'success'){
+                    mensajeExito('Asistencia registrada con éxito')
+                } else {
+                    mensajeError(mensajeSalida);
+                }
+                buscarEmpleado();
+            }
+        );
+    }
+    });
+  }
