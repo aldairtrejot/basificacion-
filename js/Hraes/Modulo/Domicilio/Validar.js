@@ -16,6 +16,7 @@ function validarDomicilio(){
     } 
 }
 
+
 function buscarInfor(){
     let codigo_postal = document.getElementById('codigo_postal1').value.trim();
     $.post("../../../../App/Controllers/Hrae/DomicilioC/CodigoPostalC.php", {
@@ -28,20 +29,27 @@ function buscarInfor(){
             var entidad = jsonData.entidad; 
             var pais = jsonData.pais;
 
+            
+
             $('#municipio1').empty();
             $('#municipio1').html(municipio);
+            $('#municipio1').selectpicker('refresh');
+
             $('#colonia1').empty();
             $('#colonia1').html(colonia);  
             $("#entidad1").val(entidad);
             $("#pais_f").val(pais);
 
-            /*
+            
             $('#colonia1').selectpicker('refresh');
-            $('.selectpicker').selectpicker();
-            */
+
         }
     );
 }
+    
+
+
+
 
 document.getElementById("municipio1").addEventListener("change", function() {
     let municipio1 = this.value;
@@ -53,7 +61,8 @@ document.getElementById("municipio1").addEventListener("change", function() {
             var colonia = jsonData.colonia; 
 
             $('#colonia1').empty();
-            $('#colonia1').html(colonia);   
+            $('#colonia1').html(colonia);  
+            $('#colonia1').selectpicker('refresh'); 
         }
     );
   });

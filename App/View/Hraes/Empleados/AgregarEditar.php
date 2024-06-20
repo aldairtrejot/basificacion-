@@ -63,20 +63,34 @@
                         <div class="col-4">
                             <label class="text-input-form div-spacing text-input-rem">Pa&iacutes de
                                 nacimiento</label><label class="text-required">*</label>
+                            <select data-style="input-select-selectpicker form-control"
+                                class="selectpicker form-control" aria-label="Default select example"
+                                data-live-search="true" id="id_cat_pais_nacimiento"
+                                data-none-results-text="Sin resultados">
+                            </select>
+                            <!--
                             <div class="custom-select-wrapper">
                                 <select class="form-control div-spacing" aria-label="Default select example"
                                     id="id_cat_pais_nacimiento" required>
                                 </select>
                             </div>
+-->
                         </div>
                         <div class="col-4">
                             <label class="text-input-form div-spacing text-input-rem">Estado de nacimiento</label><label
                                 class="text-required"></label>
+                            <select data-style="input-select-selectpicker form-control"
+                                class="selectpicker form-control" aria-label="Default select example"
+                                data-live-search="true" id="id_cat_estado_nacimiento"
+                                data-none-results-text="Sin resultados">
+                            </select>
+                            <!--
                             <div class="custom-select-wrapper">
                                 <select class="form-control div-spacing" aria-label="Default select example"
                                     id="id_cat_estado_nacimiento" required>
                                 </select>
                             </div>
+-->
                         </div>
                         <div class="col-4">
                             <label class="text-input-form div-spacing text-input-rem">Nacionalidad</label><label

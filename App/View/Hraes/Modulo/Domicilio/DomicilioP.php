@@ -8,10 +8,16 @@
         </div>
         <div class="col-4">
             <label class="text-input-rem div-spacing">Municipio</label><label class="text-required">*</label>
+            <select data-style="input-select-selectpicker form-control" class="selectpicker form-control"
+                aria-label="Default select example" data-live-search="true" id="municipio1"
+                data-none-results-text="Sin resultados">
+            </select>
+            <!--
             <div class="custom-select-wrapper">
                 <select class="form-control" aria-label="Default select example" id="municipio1" required>
                 </select>
             </div>
+-->
         </div>
 
         <div class="col-3">
@@ -33,10 +39,10 @@
     <div class="row">
         <div class="col-6">
             <label class="text-input-rem div-spacing">Colonia</label><label class="text-required">*</label>
-            <div class="custom-select-wrapper">
-                <select class="form-control" aria-label="Default select example" id="colonia1" required>
-                </select>
-            </div>
+            <select data-style="input-select-selectpicker form-control" class="selectpicker form-control"
+                aria-label="Default select example" data-live-search="true" id="colonia1"
+                data-none-results-text="Sin resultados">
+            </select>
             <!--
 
             <select data-style="input-select-selectpicker form-control" class="selectpicker form-control"

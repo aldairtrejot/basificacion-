@@ -16,11 +16,17 @@ function domicilioDetalles(id_object){
             var colonia = jsonData.colonia; 
             var pais = jsonData.pais;
 
-            $('#colonia1').empty();
-            $('#colonia1').html(colonia); 
+            
             $('#municipio1').empty();
             $('#municipio1').html(municipio);
-            
+            $('#municipio1').selectpicker('refresh');
+
+            $('#colonia1').empty();
+            $('#colonia1').html(colonia); 
+            $('#colonia1').selectpicker('refresh');
+
+
+            $('.selectpicker').selectpicker();
             /*
             $('#colonia1').selectpicker('refresh');
             $('.selectpicker').selectpicker();

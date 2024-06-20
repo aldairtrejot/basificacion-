@@ -92,6 +92,9 @@ document.getElementById("id_cat_pais_nacimiento").addEventListener("change", fun
   */
 
 
+
+   
+
   document.addEventListener("DOMContentLoaded", function() {
 
     var select = document.getElementById("id_cat_pais_nacimiento");
@@ -105,9 +108,11 @@ document.getElementById("id_cat_pais_nacimiento").addEventListener("change", fun
     
                 $('#id_cat_estado_nacimiento').empty();
                 $('#id_cat_estado_nacimiento').html(estado); 
-                //$('#id_cat_estado_nacimiento').selectpicker('refresh');
+                $('#id_cat_estado_nacimiento').selectpicker('refresh');
                 //$('.selectpicker').selectpicker 
             }
         );
     });
   });
+
+

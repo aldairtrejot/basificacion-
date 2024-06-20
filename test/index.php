@@ -1,53 +1,46 @@
-<?php
-$username = 'rodolfo.trejo';
-$password = 'trejo2024';
+<!DOCTYPE html>
+<html lang="en">
 
-// URL base de la API de ownCloud
-$baseUrl = 'https://9klehjkq.rcsrv.net/';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-//https://9klehjkq.rcsrv.net//ocs/v1.php/cloud/user
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-// Endpoint de autenticación de ownCloud
-$authUrl = $baseUrl . '/ocs/v1.php/cloud/user';
+    <!-- Bootstrap Selectpicker -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/js/bootstrap-select.min.js"></script>
 
-// Datos para la solicitud POST
-$data = array(
-    'login' => $username,
-    'password' => $password
-);
+</head>
 
-// Inicializar cURL
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $authUrl);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+<body>
+    <select class="selectpicker" id="miSelect" data-live-search="true">
+        <option value="1">Opción 1</option>
+        <option value="2">Opción 2</option>
+        <option value="3">Opción 3</option>
+    </select>
 
-// Ejecutar la solicitud
-$response = curl_exec($ch);
+</body>
+<script>
+    // Espera a que el documento esté completamente cargado
+    $(document).ready(function () {
+        // Inicializa el selectpicker
+        $('#miSelect').selectpicker();
 
-// Verificar errores
-if(curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
+        // Agrega un listener para el evento change del selectpicker
+        $('#miSelect').on('change', function () {
+            var valorSeleccionado = $(this).val(); // Obtiene el valor seleccionado
+            console.log('Valor seleccionado:', valorSeleccionado);
 
-// Cerrar la conexión
-curl_close($ch);
+            // Aquí puedes realizar acciones adicionales según el valor seleccionado
+            // Por ejemplo, mostrar un mensaje o realizar una solicitud AJAX
+        });
+    });
+</script>
 
-// Procesar la respuesta JSON
-$response_data = json_decode($response, true);
-
-// Verificar la respuesta
-if(isset($response_data['ocs']['data']['id'])) {
-    // Inicio de sesión exitoso
-    session_start();
-    $_SESSION['user_id'] = $response_data['ocs']['data']['id'];
-    $_SESSION['user_displayname'] = $response_data['ocs']['data']['displayname'];
-    
-    // Redirigir a la página principal o a donde desees después del inicio de sesión
-    header('Location: index.php');
-    exit;
-} else {
-    // Inicio de sesión fallido, mostrar mensaje de error
-    echo 'Inicio de sesión fallido. Verifica tus credenciales.';
-}
+</html>
