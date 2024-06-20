@@ -29,17 +29,24 @@
                         <div class="col-6">
                             <label class="text-input-form text-input-rem">Apellido paterno</label><label
                                 class="text-required">*</label>
-                            <input onkeyup="convertirAMayusculas(event,'apellido_paterno_d')" type="text" class="form-control"
-                                id="apellido_paterno_d" placeholder="Apellido paterno" maxlength="20">
+                            <input onkeyup="convertirAMayusculas(event,'apellido_paterno_d')" type="text"
+                                class="form-control" id="apellido_paterno_d" placeholder="Apellido paterno"
+                                maxlength="20">
                         </div>
                         <div class="col-6">
                             <label class="text-input-form text-input-rem">Tipo dependiente</label><label
                                 class="text-required">*</label>
+                            <select data-style="input-select-selectpicker form-control" class="selectpicker form-control"
+                                aria-label="Default select example" data-live-search="true" id="id_cat_dependientes_economicos_d"
+                                data-none-results-text="Sin resultados">
+                            </select>
+                            <!--
                             <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
                                     id="id_cat_dependientes_economicos_d" required>
                                 </select>
                             </div>
+-->
                         </div>
                     </div>
 
@@ -48,8 +55,9 @@
                         <div class="col-6">
                             <label class="text-input-form text-input-rem">Apellido materno</label><label
                                 class="text-required"></label>
-                            <input onkeyup="convertirAMayusculas(event,'apellido_materno_d')" type="text" class="form-control"
-                                id="apellido_materno_d" placeholder="Apellido materno" maxlength="20">
+                            <input onkeyup="convertirAMayusculas(event,'apellido_materno_d')" type="text"
+                                class="form-control" id="apellido_materno_d" placeholder="Apellido materno"
+                                maxlength="20">
                         </div>
                     </div>
                 </div>

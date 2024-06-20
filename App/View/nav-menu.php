@@ -31,7 +31,7 @@ $id_rol = $_SESSION['id_rol'];
     <script src="../../../../js/Global/Mensajes/Mensajes.js"></script>
     <script src="../../../../js/Global/Seguridad/Confirmacion.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
     <!-- Development -->
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
@@ -101,13 +101,17 @@ $id_rol = $_SESSION['id_rol'];
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-text-tittle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Nom. Hraes
+                                Menú
                             </a>
                             <ul class="dropdown-menu">
+                                
+                            <?php if ($id_rol == 1) {?>
                                 <li><a class="dropdown-item" href="../../Hraes/CentroTrabajo/index.php">Centro de
                                         trabajo</a></li>
-                                <li><a class="dropdown-item" href="../../Hraes/Empleados/index.php">Empleados</a></li>
                                 <li><a class="dropdown-item" href="../../Hraes/Plazas/index.php">Plazas</a></li>
+                                <?php } ?>
+                                <li><a class="dropdown-item" href="../../Hraes/Empleados/index.php">Empleados</a></li>
+
                             </ul>
                         </li>
                     <?php } ?>
@@ -169,8 +173,8 @@ $id_rol = $_SESSION['id_rol'];
     <!-- MODAL SALIR-->
 
     <!-- FIN MODAL MODIFICAR PW -->
-     <input type="hidden" id="id_user" value="<?php echo $id_user ?>">
-     <input type="hidden" id="pw">
+    <input type="hidden" id="id_user" value="<?php echo $id_user ?>">
+    <input type="hidden" id="pw">
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true" id="modificar_pw">
         <div class="modal-dialog modal-dialog-centered">
@@ -194,7 +198,8 @@ $id_rol = $_SESSION['id_rol'];
                             <div class="col-12">
                                 <label class="text-input-form div-spacing text-input-rem">Nueva contraseña</label><label
                                     class="text-required">*</label>
-                                <input type="password" class="form-control" id="pw_nueva" placeholder="Nueva contraseña">
+                                <input type="password" class="form-control" id="pw_nueva"
+                                    placeholder="Nueva contraseña">
                             </div>
                             <div class="div-spacing"></div>
                             <div class="col-12">
@@ -209,8 +214,8 @@ $id_rol = $_SESSION['id_rol'];
 
                 <div class="div-spacing"></div>
                 <div class="modal-footer">
-                    <button onclick="modalEditPwExit();" type="button" class="btn btn-secondary"
-                        data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button onclick="modalEditPwExit();" type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                            class="fas fa-times"></i> Cancelar</button>
                     <button type="button" class="btn btn-success save-botton-modal" onclick="return validarPW();"><i
                             class="fas fa-save"></i> Guardar</button>
                 </div>

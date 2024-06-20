@@ -3,7 +3,8 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header background-modal">
-                <h5 class="modal-title text-modal-tittle"><label id="titulodiscapacidad" class="text-modal-tittle"></label>
+                <h5 class="modal-title text-modal-tittle"><label id="titulodiscapacidad"
+                        class="text-modal-tittle"></label>
                     capacidad diferente.</h5>
             </div>
 
@@ -14,11 +15,20 @@
                         <div class="col-12">
                             <label class="text-input-form text-input-rem">Capacidad diferente</label><label
                                 class="text-required">*</label>
-                            <div class="custom-select-wrapper">
+
+                            <select data-style="input-select-selectpicker form-control"
+                                class="selectpicker form-control" aria-label="Default select example"
+                                data-live-search="true" id="id_cat_capacidad_dif_hraes"
+                                data-none-results-text="Sin resultados">
+                            </select>
+                            <!--
+                                <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
                                     id="id_cat_capacidad_dif_hraes" required>
                                 </select>
-                            </div>
+                                </div>
+-->
+
                         </div>
                     </div>
                 </div>

@@ -44,6 +44,9 @@ function agregarEditarDependiente(id_object){
 
             $('#id_cat_dependientes_economicos_d').empty();
             $('#id_cat_dependientes_economicos_d').html(dependiente); 
+            $('#id_cat_dependientes_economicos_d').selectpicker('refresh');
+            $('.selectpicker').selectpicker();
+
 
             $("#nombre_d").val(entity.nombre);
             $("#curp_d").val(entity.curp);

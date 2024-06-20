@@ -19,7 +19,7 @@
                         <div class="vertical-line"></div>
                     </div>
                     <div class="col padding-left-0">
-                        <h4>Hospital Regional de Alta Especialidad</h4>
+                        <h4>Basificaci&oacuten de entidades</h4>
                     </div>
                 </div>
             </div>

@@ -53,6 +53,7 @@ function agregarEditarDetalles(id_object) { //SE OBTIENEN INFO DE ID SELECCIONAD
             //Empleado
             $('#nacionalidad').empty();
             $('#nacionalidad').html(nacionalidad); 
+            
 
             $('#id_cat_estado_civil').empty();
             $('#id_cat_estado_civil').html(estadoCivil); 
@@ -64,10 +65,17 @@ function agregarEditarDetalles(id_object) { //SE OBTIENEN INFO DE ID SELECCIONAD
 
             $('#id_cat_estado_nacimiento').empty();
             $('#id_cat_estado_nacimiento').html(estado); 
+
+
+            $('#id_cat_estado_civil').selectpicker('refresh');
+            $('#nacionalidad').selectpicker('refresh');
+            $('.selectpicker').selectpicker();
             //$('#id_cat_estado_nacimiento').selectpicker('refresh');
             //$('.selectpicker').selectpicker();
             //$('#id_cat_genero').empty();
             //$('#id_cat_genero').html(genero); 
+
+            
 
             if (entity.curp != null){
                 $("#genero_x").val(generoCurp(entity.curp));

@@ -17,7 +17,7 @@ $data =
         <tr>
             <th>Acciones</th>
             <th>Nivel de estudio</th>
-            <th>Trayectoria laboral</th>
+            <th>Carrera</th>
         </tr>
     </thead>';
 

@@ -41,6 +41,9 @@ function agregarEditarCapacidad(id_object){
 
             $('#id_cat_capacidad_dif_hraes').empty();
             $('#id_cat_capacidad_dif_hraes').html(capacidad); 
+
+            $('#id_cat_capacidad_dif_hraes').selectpicker('refresh');
+            $('.selectpicker').selectpicker();
         }
     );
 

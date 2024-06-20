@@ -34,7 +34,11 @@ function buscarInfor(){
             $('#colonia1').html(colonia);  
             $("#entidad1").val(entidad);
             $("#pais_f").val(pais);
-            
+
+            /*
+            $('#colonia1').selectpicker('refresh');
+            $('.selectpicker').selectpicker();
+            */
         }
     );
 }

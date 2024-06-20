@@ -13,11 +13,18 @@
                         <div class="col-12">
                             <label class="text-input-form div-spacing text-input-rem">Seleccione la
                                 especialidad</label><label class="text-required">*</label>
+                            <select data-style="input-select-selectpicker form-control"
+                                class="selectpicker form-control" aria-label="Default select example"
+                                data-live-search="true" id="id_cat_especialidad_hraes"
+                                data-none-results-text="Sin resultados">
+                            </select>
+                            <!--
                             <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
                                     id="id_cat_especialidad_hraes" required>
                                 </select>
                             </div>
+-->
                         </div>
                     </div>
                 </div>

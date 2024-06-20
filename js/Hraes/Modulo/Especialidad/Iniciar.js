@@ -42,6 +42,9 @@ function agregarEditarEspecialidad(id_object){
 
             $('#id_cat_especialidad_hraes').empty();
             $('#id_cat_especialidad_hraes').html(especialidad); 
+
+            $('#id_cat_especialidad_hraes').selectpicker('refresh');
+            $('.selectpicker').selectpicker();
         }
     );
 
