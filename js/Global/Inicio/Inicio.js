@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    centroTrabajoHraes();
-    plazasHraes();
+    //centroTrabajoHraes();
+   // plazasHraes();
     empleadosHraes();
 });
 
@@ -11,6 +11,7 @@ function empleadosHraes(){
 
     $.post("../../../../App/Controllers/Hrae/EmpleadoC/InicioC.php", {},
         function (data) {
+            console.log(data);
             let jsonData = JSON.parse(data);
             let empleados = jsonData.empleados;
             let masculino = jsonData.masculino;
