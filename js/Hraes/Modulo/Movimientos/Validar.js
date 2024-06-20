@@ -11,7 +11,9 @@ function validarAgregar(){
             validarMovimiento();
         }
     } else {
+        if (validarAccion()){
         validarMovimiento();
+        }
     }
 }
 

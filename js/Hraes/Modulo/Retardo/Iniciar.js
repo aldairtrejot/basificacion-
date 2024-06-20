@@ -43,13 +43,34 @@ function agregarEditarRetardo(id_object){
     $.post("../../../../App/Controllers/Hrae/RetardoC/DetallesC.php", {
         id_object: id_object
     },
-        function (data) {
+        function (data) { 
             var jsonData = JSON.parse(data);
             var entity = jsonData.response;  
+            var catalogo = jsonData.catalogo;
+            var estatus = jsonData.estatus;
 
-            $("#fecha_retardo").val(entity.fecha);
-            $("#hora_entrada").val(concatHora(entity.hora_entrada,entity.minuto_entrada));
-            $("#hora_salida").val(concatHora(entity.hora_salida,entity.minuto_salida));
+            $('#cat_asistencia_bas').empty();
+            $('#cat_asistencia_bas').html(catalogo);
+
+            $('#cat_estatus_bas').empty();
+            $('#cat_estatus_bas').html(estatus);
+            
+
+            $('#observaciones_bas').val(entity.observaciones);
+
+            ///ocultar hora
+            if (id_object == null){
+                ocultarContenido('ocultar_hora');
+                ocultarContenido('ocultar_estatus');
+                //$("#fecha").val(entity.fecha);
+                //$("#hora").val(convertirTiempoPostgreSQL(entity.hora));
+            } else {
+                $("#fecha").val(entity.fecha);
+                $("#hora").val(convertirTiempoPostgreSQL(entity.hora));
+                
+                mostrarContenido('ocultar_hora');
+                mostrarContenido('ocultar_estatus');
+            }
         }
     );
 
@@ -60,26 +81,41 @@ function salirAgregarEditarRetardo(){
     $("#agregar_editar_retardo").modal("hide");
 }
 
+function convertirTiempoPostgreSQL(tiempo) {
+    // Dividir el tiempo en horas, minutos y segundos
+    let partes = tiempo.split(':');
+
+    // Extraer horas y minutos
+    let horas = partes[0];
+    let minutos = partes[1];
+
+    // Devolver como objeto con horas y minutos
+    return horas + ':' + minutos;
+}
 
 function guardarRetardo() {
-    let fecha_retardo = $("#fecha_retardo").val();
-    let hora_entrada = $("#hora_entrada").val();
-    let hora_salida = $("#hora_salida").val();
+    //if(validarAccion()){
+    let fecha = $("#fecha").val();
+    let hora = $("#hora").val();
+    let cat_asistencia_bas = $("#cat_asistencia_bas").val();
+    let cat_estatus_bas = $("#cat_estatus_bas").val();
+    let observaciones_bas = $("#observaciones_bas").val();
     let id_object = $("#id_object").val();
-    hora_salida = hora_salida  ? hora_salida  : '0:0';
 
     $.post("../../../../App/Controllers/Hrae/RetardoC/AgregarEditarC.php", {
         id_object: id_object,
-        fecha_retardo: fecha_retardo,
-        hora_entrada:hora_entrada,
-        hora_salida:hora_salida,
-        id_tbl_empleados_hraes:id_tbl_empleados_hraes
+        hora: hora,
+        fecha:fecha,
+        cat_asistencia_bas:cat_asistencia_bas,
+        cat_estatus_bas:cat_estatus_bas,
+        observaciones:observaciones_bas,
+        id_tbl_empleados_hraes:id_tbl_empleados_hraes,
     },
         function (data) {
             if (data == 'edit'){
-                mensajeExito('Retardo modificado con éxito');
+                mensajeExito('Asistencia modificada con éxito');
             } else if (data == 'add') {
-                mensajeExito('Retardo agregado con éxito');  
+                mensajeExito('Asistencia agregada con éxito');  
             } else {
                 mensajeError(data);
             }
@@ -87,9 +123,11 @@ function guardarRetardo() {
             buscarRetardo();
         }
     );
+//}
 }
 
 function eliminarRetardo(id_object) {//ELIMINAR USUARIO
+    if(validarAccion()){
     Swal.fire({
         title: "¿Está seguro?",
         text: "¡No podrás revertir esto!",
@@ -115,6 +153,7 @@ function eliminarRetardo(id_object) {//ELIMINAR USUARIO
         );
     }
     });
+}
 }
 
 function concatHora(hora,minuto){
@@ -191,7 +230,6 @@ function asitenciaEmpleado(){
                 id_object: id_tbl_empleados_hraes
             },
             function (data) {
-                console.log(data);
                 if (data == 'success'){
                     mensajeExito('Asistencia registrada con éxito')
                 } else {

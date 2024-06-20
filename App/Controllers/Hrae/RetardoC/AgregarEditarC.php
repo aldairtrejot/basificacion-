@@ -2,24 +2,34 @@
 include '../librerias.php';
 
 $modelRetardoM = new ModelRetardoM();
-$h1 = $_POST['hora_entrada'];
-$h2 = $_POST['hora_salida'];
 $bitacoraM = new BitacoraM();
-list($hora_entrada, $minuto_entrada) = explode(':', $h1);
-list($hora_salida, $minuto_salida) = explode(':', $h2);
+
+$cat_asistencia_bas = $_POST['cat_asistencia_bas'];
+$cat_estatus_bas = $_POST['cat_estatus_bas'];
+$observaciones = $_POST['observaciones'];
+$id_tbl_empleados_hraes = $_POST['id_tbl_empleados_hraes'];
 
 $condicion = [
-    'id_ctrl_retardo_hraes' => $_POST['id_object']
+    'id_ctrl_asistencia_bas' => $_POST['id_object']
 ];
 
-$datos = [
-    'id_tbl_empleados_hraes' => $_POST['id_tbl_empleados_hraes'],
-    'fecha' => $_POST['fecha_retardo'],
-    'hora_entrada' => $hora_entrada,
-    'minuto_entrada' => $minuto_entrada,
-    'hora_salida' => $hora_salida,
-    'minuto_salida' => $minuto_salida
-];
+if ($cat_asistencia_bas == 2){
+    $datos = [
+        'fecha' => $_POST['fecha'],
+        'hora' => $_POST['hora'],
+        'id_cat_asistencia_bas' => $_POST['cat_asistencia_bas'],
+        'id_cat_estatus_bas' => $_POST['cat_estatus_bas'],
+        'observaciones' => $_POST['observaciones'],
+        'id_tbl_empleados_hraes' => $_POST['id_tbl_empleados_hraes'],
+    ];
+} else {
+    $datos = [
+        'fecha' => $_POST['fecha'],
+        'hora' => $_POST['hora'],
+        'id_cat_asistencia_bas' => $_POST['cat_asistencia_bas']
+    ];
+}
+
 
 $var = [
     'datos' => $datos,
@@ -29,7 +39,7 @@ $var = [
 if ($_POST['id_object'] != null) { //Modificar
     if ($modelRetardoM ->editarByArray($connectionDBsPro, $datos, $condicion)) {
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_retardo_hraes',
+            'nombre_tabla' => 'ctrl_asistencia_bas',
             'accion' => 'MODIFICAR',
             'valores' => json_encode($var),
             'fecha' => $timestamp,
@@ -39,10 +49,17 @@ if ($_POST['id_object'] != null) { //Modificar
         echo 'edit';
     }
 
-} else { //Agregar
-    if ($modelRetardoM ->agregarByArray($connectionDBsPro, $datos)) {
+}  else { //Agregar
+    if ($cat_asistencia_bas == 2){
+    $save = pg_query("INSERT INTO ctrl_asistencia_bas (fecha, hora, observaciones, id_tbl_empleados_hraes, id_cat_asistencia_bas, id_cat_estatus_bas)
+                        SELECT CURRENT_DATE, CURRENT_TIME, '$observaciones', $id_tbl_empleados_hraes, $cat_asistencia_bas,$cat_estatus_bas");
+    } else {
+        $save = pg_query("INSERT INTO ctrl_asistencia_bas (fecha, hora, id_tbl_empleados_hraes, id_cat_asistencia_bas)
+                        SELECT CURRENT_DATE, CURRENT_TIME, $id_tbl_empleados_hraes, $cat_asistencia_bas");
+    }
+    if ($save) {
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_retardo_hraes',
+            'nombre_tabla' => 'ctrl_asistencia_bas',
             'accion' => 'AGREGAR',
             'valores' => json_encode($var),
             'fecha' => $timestamp,

@@ -11,7 +11,7 @@
             <input type="date" class="form-control" id="fecha_ingreso_gob_fed" placeholder="">
         </div>
         <div class="col-4">
-            <label class="text-input-rem div-spacing">Vigencia del</label><label class="text-required"></label>
+            <label class="text-input-rem div-spacing">Fecha CLUES</label><label class="text-required"></label>
             <input type="date" class="form-control" id="vigencia_del" placeholder="">
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="div-spacing"></div>
     <div class="row">
         <div class="col-4">
-            <label class="text-input-rem div-spacing">Vigencia al</label><label class="text-required"></label>
+            <label class="text-input-rem div-spacing">Fecha IMSS-BIENESTAR</label><label class="text-required"></label>
             <input type="date" class="form-control" id="vigencia_al" placeholder="">
         </div>
         <div class="col-8">

@@ -2,27 +2,28 @@
 
 class ModelRetardoM
 {
-    function listarById($id_object,$paginator)
+    function listarById($id_object, $paginator)
     {
         $listado = pg_query("SELECT 
-                                id_asistencia_bas,
-                                fecha::date AS fecha,
-                                to_char(fecha, 'HH24:MI') hora
-                            FROM asistencia_bas
+                                id_ctrl_asistencia_bas,
+                                fecha,
+                                TO_CHAR(hora, 'HH24:MI'),
+                                cat_asistencia_bas.nombre
+                            FROM ctrl_asistencia_bas
+							INNER JOIN cat_asistencia_bas
+							ON ctrl_asistencia_bas.id_cat_asistencia_bas =
+								cat_asistencia_bas.id_cat_asistencia_bas
                             WHERE id_tbl_empleados_hraes = $id_object
-                            ORDER BY id_asistencia_bas DESC
+                            ORDER BY id_ctrl_asistencia_bas DESC
                             LIMIT 3 OFFSET $paginator;");
         return $listado;
     }
 
     function listarEditById($id_object)
     {
-        $listado = pg_query("SELECT id_ctrl_retardo_hraes, fecha, hora_entrada, minuto_entrada,
-                                    hora_salida, minuto_salida, id_tbl_empleados_hraes
-                            FROM ctrl_retardo_hraes
-                            WHERE id_ctrl_retardo_hraes = $id_object
-                            ORDER BY id_ctrl_retardo_hraes DESC
-                            LIMIT 5;");
+        $listado = pg_query("SELECT *
+                            FROM ctrl_asistencia_bas
+                            WHERE id_ctrl_asistencia_bas = $id_object;");
         return $listado;
     }
 
@@ -39,35 +40,48 @@ class ModelRetardoM
         ];
     }
 
-    function listarByBusqueda($id_object, $busqueda,$paginator)
+    function listarByBusqueda($id_object, $busqueda, $paginator)
     {
-        $listado = pg_query("SELECT id_asistencia_bas,
-                                fecha::date AS fecha,
-                                to_char(fecha, 'HH24:MI') hora
-                            FROM asistencia_bas
+        $listado = pg_query("SELECT 
+                                id_ctrl_asistencia_bas,
+                                fecha,
+                                TO_CHAR(hora, 'HH24:MI'),
+                                cat_asistencia_bas.nombre
+                            FROM ctrl_asistencia_bas
+							INNER JOIN cat_asistencia_bas
+							ON ctrl_asistencia_bas.id_cat_asistencia_bas =
+								cat_asistencia_bas.id_cat_asistencia_bas
                             WHERE id_tbl_empleados_hraes = $id_object
-                            AND fecha::date::TEXT LIKE '%$busqueda%'
-                            OR to_char(fecha, 'HH24:MI')::TEXT LIKE '%$busqueda%'
-                            ORDER BY id_asistencia_bas DESC
-                             LIMIT 3 OFFSET $paginator;");
+                            AND ( fecha::date::TEXT LIKE '%$busqueda%'
+                                OR ((TO_CHAR(hora, 'HH24:MI')))::TEXT
+                                    LIKE '%$busqueda%'
+                                OR UPPER(cat_asistencia_bas.nombre) LIKE '%$busqueda%'
+                                )
+                            ORDER BY id_ctrl_asistencia_bas DESC
+                            LIMIT 3 OFFSET $paginator;");
         return $listado;
     }
 
     function editarByArray($conexion, $datos, $condicion)
     {
-        $pg_update = pg_update($conexion, 'ctrl_retardo_hraes', $datos, $condicion);
+        $pg_update = pg_update($conexion, 'ctrl_asistencia_bas', $datos, $condicion);
         return $pg_update;
     }
 
     function agregarByArray($conexion, $datos)
     {
-        $pg_add = pg_insert($conexion, 'ctrl_retardo_hraes', $datos);
+        $pg_add = pg_insert($conexion, 'ctrl_asistencia_bas', $datos);
         return $pg_add;
     }
 
     function eliminarByArray($conexion, $condicion)
     {
-        $pgs_delete = pg_delete($conexion, 'ctrl_retardo_hraes', $condicion);
+        $pgs_delete = pg_delete($conexion, 'ctrl_asistencia_bas', $condicion);
         return $pgs_delete;
+    }
+
+    function saveAsistencia($observaciones,$id_tbl_empleados_hraes,$id_cat_asistencia_bas,$id_cat_estatus_bas){
+        $save = pg_query("INSERT INTO ctrl_asistencia_bas (fecha, hora, observaciones, id_tbl_empleados_hraes, id_cat_asistencia_bas, id_cat_estatus_bas)
+                            VALUES (CURRENT_DATE, CURRENT_TIME, '$observaciones', $id_tbl_empleados_hraes, $id_cat_asistencia_bas,$id_cat_estatus_bas);");
     }
 }

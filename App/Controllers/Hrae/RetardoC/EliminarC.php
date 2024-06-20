@@ -5,13 +5,13 @@ $modelRetardoM = new ModelRetardoM();
 $bitacoraM = new BitacoraM();
 
 $condicion = [
-    'id_ctrl_retardo_hraes' => $_POST['id_object']
+    'id_ctrl_asistencia_bas' => $_POST['id_object']
 ];
 
 if (isset($_POST['id_object'])){
     if ($modelRetardoM-> eliminarByArray($connectionDBsPro, $condicion)){
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_retardo_hraes',
+            'nombre_tabla' => 'ctrl_asistencia_bas',
             'accion' => 'ELIMINAR',
             'valores' => json_encode($condicion),
             'fecha' => $timestamp,

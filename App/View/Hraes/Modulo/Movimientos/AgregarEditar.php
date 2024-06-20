@@ -106,19 +106,42 @@
                         <div class="col-4">
                             <label class="text-input-form div-spacing text-input-rem">Motivo</label><label
                                 class="text-required"></label>
-                            <input onkeyup="convertirAMayusculas(event,'motivo_estatus')" type="text" class="form-control" id="motivo_estatus" placeholder="Motivo"
-                                maxlength="20" disable>
+                            <input onkeyup="convertirAMayusculas(event,'motivo_estatus')" type="text"
+                                class="form-control" id="motivo_estatus" placeholder="Motivo" maxlength="20" disable>
                         </div>
                         <div class="col-8">
                             <label class="text-input-form div-spacing text-input-rem">Observaciones</label><label
                                 class="text-required"></label>
-                            <input onkeyup="convertirAMayusculas(event,'observaciones')" type="text" class="form-control" id="observaciones" placeholder="Observaciones"
-                                maxlength="50" disable>
+                            <input onkeyup="convertirAMayusculas(event,'observaciones')" type="text"
+                                class="form-control" id="observaciones" placeholder="Observaciones" maxlength="50"
+                                disable>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div id="ocultar_model_plaza">
+                <div class="conteiner">
+                    <div class="row">
+                        <div class="custom-alert">
+                            <div class="d-flex align-items-center">
+                                <div class="mr-3" style="border-right: 2px solid #B87400;"></div>
+
+                                <p style="font-weight: bold;">Importante: La plaza seleccionada es provisional, por
+                                    favor ingresa el nuevo número de plaza asignado.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="text-input-form div-spacing text-input-rem">Observaciones</label><label
+                                class="text-required"></label>
+                            <input oninput="validarNumero(this)" type="number" placeholder="Núm. Plaza"
+                                class="form-control" id="num_plaza_new" maxlength="15">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="div-spacing"></div>
             <div class="modal-footer">
@@ -127,6 +150,7 @@
                 <button type="button" class="btn btn-success save-botton-modal" onclick="return validarAgregar();"><i
                         class="fas fa-save"></i> Guardar</button>
                 <input type="hidden" id="id_object">
+                <input type="hidden" id="situacionPlaza">
             </div>
 
         </div>
