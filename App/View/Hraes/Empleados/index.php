@@ -80,6 +80,7 @@
     </div>
 </div>
 
+<?php include 'AgregarEditarR.php' ?>
 <script src="../../../../js/Hraes/Empleados/Empleados.js"></script>
 <script src="../../../../js/Hraes/Empleados/validar.js"></script>
 <script src="../../../../js/Hraes/Empleados/Busqueda.js"></script>

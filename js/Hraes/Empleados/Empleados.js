@@ -214,4 +214,141 @@ function convertirAMayusculas(event, inputId) {
 
 
 
-  
+  //////////////////////////////////
+  function agregarEditarRetardo(id_object){
+    let titulo = document.getElementById("titulo_retardo");
+    titulo.textContent = 'Modificar';
+    if (true){
+        titulo.textContent = 'Agregar';
+        $("#agregar_editar_retardo").find("input,textarea,select").val("");
+    }
+
+    $("#id_object").val(id_object);
+
+    $.post("../../../../App/Controllers/Hrae/RetardoC/DetallesC.php", {
+        id_object: null
+    },
+        function (data) { 
+            var jsonData = JSON.parse(data);
+            var entity = jsonData.response;  
+            var catalogo = jsonData.catalogo;
+            var estatus = jsonData.estatus;
+
+            $('#cat_asistencia_bas').empty();
+            $('#cat_asistencia_bas').html(catalogo);
+
+            $('#cat_estatus_bas').empty();
+            $('#cat_estatus_bas').html(estatus);
+            
+
+            $('#observaciones_bas').val(entity.observaciones);
+
+            ///ocultar hora
+                ocultarContenido('ocultar_hora');
+                ocultarContenido('ocultar_estatus');
+                //$("#fecha").val(entity.fecha);
+                //$("#hora").val(convertirTiempoPostgreSQL(entity.hora));
+ 
+        }
+    );
+
+    $("#agregar_editar_retardo").modal("show");
+}
+
+function salirAgregarEditarRetardo(){
+    $("#agregar_editar_retardo").modal("hide");
+}
+
+function guardarRetardo() {
+    //if(validarAccion()){
+    let fecha = $("#fecha").val();
+    let hora = $("#hora").val();
+    let cat_asistencia_bas = $("#cat_asistencia_bas").val();
+    let cat_estatus_bas = $("#cat_estatus_bas").val();
+    let observaciones_bas = $("#observaciones_bas").val();
+    let id_object = $("#id_object").val();
+
+    $.post("../../../../App/Controllers/Hrae/RetardoC/AgregarEditarC.php", {
+        id_object: null,
+        hora: hora,
+        fecha:fecha,
+        cat_asistencia_bas:cat_asistencia_bas,
+        cat_estatus_bas:cat_estatus_bas,
+        observaciones:observaciones_bas,
+        id_tbl_empleados_hraes:id_object,
+    },
+        function (data) {
+            if (data == 'edit'){
+                mensajeExito('Asistencia modificada con éxito');
+            } else if (data == 'add') {
+                mensajeExito('Asistencia agregada con éxito');  
+            } else {
+                mensajeError(data);
+            }
+            $("#agregar_editar_retardo").modal("hide");
+            buscarRetardo();
+        }
+    );
+//}
+}
+
+
+
+var idDocumentos = 2;
+
+function validarDependiente(){
+    let fecha_retardo = document.getElementById('fecha').value;
+    let hora_entrada = document.getElementById('hora').value;
+    let cat_asistencia_bas = document.getElementById('cat_asistencia_bas').value;
+    let cat_estatus_bas = document.getElementById('cat_estatus_bas').value;
+    let observaciones_bas = document.getElementById('observaciones_bas').value;
+    let id_object = document.getElementById('id_object').value;
+
+    if (true){///Agregar
+            if(validarData(cat_asistencia_bas,'Seleccione el tipo')){
+                if (cat_asistencia_bas == idDocumentos){
+                    if (validarData(cat_estatus_bas,'Seleccione el estatus')){
+                        guardarRetardo();
+                    }
+                } else {
+                    guardarRetardo();
+                }
+         } 
+    } else { ///MODIFICAR
+        if(validarAccion()){
+        if(validarData(fecha_retardo,'Fecha') &&
+            validarData(hora_entrada,'Hora') &&
+            validarData(cat_asistencia_bas,'Seleccione el tipo')){
+            if (cat_asistencia_bas == idDocumentos){
+                if (validarData(cat_estatus_bas,'Seleccione el estatus')){
+                    guardarRetardo();
+                }
+            } else {
+                guardarRetardo();
+            }
+     } 
+    }
+    }
+}
+
+
+var selectElement = document.getElementById('cat_asistencia_bas');
+        selectElement.addEventListener('change', function() {
+        if (selectElement.value == idDocumentos){
+            mostrarContenido('ocultar_estatus');
+        } else {
+            ocultarContenido('ocultar_estatus');
+        }
+    });
+
+
+    function ocultarContenido(text) {
+        let x = document.getElementById(text);
+        x.style.display = "none";
+        
+    }
+    
+    function mostrarContenido(text) {
+        let x = document.getElementById(text);
+        x.style.display = "block";
+    }
