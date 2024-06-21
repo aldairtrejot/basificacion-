@@ -14,20 +14,18 @@ $curp = $empleado['curp'];
 $rfc = $empleado['rfc'];
 $noEmpleado = $empleado['num_empleado'];
 
-$nivel = '';
-$puesto = '';
+$nivel = ' - ';
+$puesto = ' - ';
 
 $idPlazaEmpleado = $row->returnArrayById($modelMovimientosM->countEmpleadoPlaza($id_object));
-if ($idPlazaEmpleado != 0){ ///tiene info
+if ($idPlazaEmpleado[0] != 0){ ///tiene info
     $ultimoMovimiento = $row->returnArrayById($modelMovimientosM->ultimoMovimiento($id_object));
     if ($ultimoMovimiento[0] != 3) { ///distinto de baja
         $plazasX = $row->returnArrayById($modelMovimientosM->returnNivelesPuesto($ultimoMovimiento[1]));
         $puesto = $plazasX[0];
         $nivel = $plazasX[1];
     }
-} else {
-
-}
+} 
 
 $var = [
     'nombre' => $nombre,

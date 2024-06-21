@@ -19,3 +19,34 @@ INNER JOIN cat_estatus
 INNER JOIN cat_entidad
 	ON tbl_centro_trabajo_hraes.id_cat_entidad =
 		cat_entidad.id_cat_entidad
+
+
+
+
+
+DROP TABLE IF EXISTS cat_asistencia_bas;
+CREATE TABLE IF NOT EXISTS cat_asistencia_bas (
+	id_cat_asistencia_bas SERIAL PRIMARY KEY,
+	nombre VARCHAR(40)
+);
+
+INSERT INTO cat_asistencia_bas (nombre) VALUES ('ASISTENCIA'), ('ASISTENCIA (ENTREGA DOCUMENTOS)');
+
+DROP TABLE IF EXISTS cat_estatus_bas;
+CREATE TABLE IF NOT EXISTS cat_estatus_bas(
+	id_cat_estatus_bas SERIAL PRIMARY KEY,
+	nombre VARCHAR(49)
+);
+
+INSERT INTO cat_estatus_bas (nombre) VALUES ('ACEPTDADO'), ('RECHAZADO');
+
+DROP TABLE IF EXISTS ctrl_asistencia_bas;
+CREATE TABLE IF NOT EXISTS ctrl_asistencia_bas(
+	id_ctrl_asistencia_bas SERIAL PRIMARY KEY,
+	fecha DATE,
+	hora TIME,
+	observaciones VARCHAR(150),
+	id_tbl_empleados_hraes INTEGER,
+	id_cat_asistencia_bas INTEGER,
+	id_cat_estatus_bas INTEGER
+);

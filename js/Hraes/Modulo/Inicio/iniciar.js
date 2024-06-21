@@ -11,7 +11,6 @@ function buscarInfoEmpleado(id_tbl_empleados_hraes){
         id_tbl_empleados_hraes:id_tbl_empleados_hraes
     },
         function (data) {
-            console.log(data);
             let jsonData = JSON.parse(data);
             let nombre = jsonData.nombre;
             let curp = jsonData.curp;

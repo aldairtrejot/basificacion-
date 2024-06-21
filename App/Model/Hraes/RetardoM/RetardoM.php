@@ -32,7 +32,7 @@ class ModelRetardoM
         return $raw = [
             'id_ctrl_retardo_hraes' => null,
             'fecha' => null,
-            'hora_entrada' => null,
+            'hora' => null,
             'minuto_entrada' => null,
             'hora_salida' => null,
             'minuto_salida' => null,
