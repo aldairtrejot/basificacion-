@@ -37,7 +37,6 @@ function agregarEditarJefe(id_object){
         id_object: id_object
     },
         function (data) {
-            console.log(data);
             var jsonData = JSON.parse(data);//se obtiene el json
             var catalogoLengua = jsonData.catalogoLengua; //Se agrega a emtidad 
 
