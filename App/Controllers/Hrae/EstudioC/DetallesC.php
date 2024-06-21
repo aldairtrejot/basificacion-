@@ -17,10 +17,16 @@ if ($id_object != null){
     if ($response['id_cat_carrera_hraes'] != ''){
         $carrera = $catCarrerasHraesC->selectByIdObject($catCarrerasHraesM->listarByAll(),$row->returnArrayById($catCarrerasHraesM->obtenerElemetoById($response['id_cat_carrera_hraes'])));
     }
-    
+    $cedula_ca = $response['cedula'];
+    $carrera_ca = $response['carrera'];
+    $estudio_id = $response['id_cat_carrera_hraes'];
+
     $var = [
         'estudio' => $estudio,
         'carrera' => $carrera,
+        'cedula_ca' => $cedula_ca,
+        'carrera_ca' => $carrera_ca,
+        'estudio_id' => $estudio_id,
     ];
     echo json_encode($var);
 } else {

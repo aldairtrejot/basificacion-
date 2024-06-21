@@ -6,7 +6,8 @@ class ModelEstudioM
     {
         $listado = pg_query("SELECT ctrl_estudios_hraes.id_ctrl_estudios_hraes,
                                     cat_nivel_estudios.nivel_estudios,
-                                    cat_carrera_hraes.carrera
+                                    cat_carrera_hraes.carrera,
+                                    ctrl_estudios_hraes.cedula
                             FROM ctrl_estudios_hraes
                             INNER JOIN cat_nivel_estudios
                             ON ctrl_estudios_hraes.id_cat_nivel_estudios = 
@@ -24,7 +25,8 @@ class ModelEstudioM
     {
         $listado = pg_query("SELECT ctrl_estudios_hraes.id_ctrl_estudios_hraes,
                                     cat_nivel_estudios.nivel_estudios,
-                                    cat_carrera_hraes.carrera
+                                    cat_carrera_hraes.carrera,
+                                    ctrl_estudios_hraes.cedula
                             FROM ctrl_estudios_hraes
                             INNER JOIN cat_nivel_estudios
                             ON ctrl_estudios_hraes.id_cat_nivel_estudios = 
@@ -36,7 +38,8 @@ class ModelEstudioM
                             AND (TRIM(UPPER(UNACCENT(cat_nivel_estudios.nivel_estudios)))
                                 LIKE '%$busqueda%' 
                             OR TRIM(UPPER(UNACCENT(cat_carrera_hraes.carrera)))
-                                LIKE '%$busqueda%')
+                                LIKE '%$busqueda%'
+                            OR ctrl_estudios_hraes.cedula LIKE '%$busqueda%'  )
                             ORDER BY ctrl_estudios_hraes.id_ctrl_estudios_hraes DESC
                             LIMIT 3 OFFSET $paginator;");
         return $listado;

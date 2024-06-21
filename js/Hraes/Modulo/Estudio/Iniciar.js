@@ -44,17 +44,24 @@ function agregarEditarEstudio(id_object){
 
             var cedula_ca = jsonData.cedula_ca;
             var carrera_ca = jsonData.carrera_ca;
-            var carrera_ca = jsonData.carrera_ca;
+            var estudio_id = jsonData.estudio_id;
 
             $('#id_cat_nivel_estudios').empty();
             $('#id_cat_nivel_estudios').html(estudio);
-            
+            $('#cedula_ca').val(cedula_ca);
+
             $('#id_cat_carrera_hraes').empty();
             $('#id_cat_carrera_hraes').html(carrera); 
 
             $('#id_cat_nivel_estudios').selectpicker('refresh');
             $('#id_cat_carrera_hraes').selectpicker('refresh');
             $('.selectpicker').selectpicker();
+
+            ocultarContenido('ocultar_carrera');
+            if (estudio_id == 160){
+                $('#carrera_ca').val(carrera_ca);
+                mostrarContenido('ocultar_carrera');
+            }
         }
     );
 
@@ -67,11 +74,21 @@ function salirAgregarEstudio(){
 
 
 function guardarEstudio() {
+
+    let id_cat_carrera_hraes = $("#id_cat_carrera_hraes").val();
+    let carrera_ca = $("#carrera_ca").val();
+    if (id_cat_carrera_hraes != 160){
+        carrera_ca = '';
+    }
+
+
     $.post("../../../../App/Controllers/Hrae/EstudioC/AgregarEditarC.php", {
         id_object: $("#id_object").val(),
         id_cat_carrera_hraes: $("#id_cat_carrera_hraes").val(),
         id_cat_nivel_estudios: $("#id_cat_nivel_estudios").val(),
-        id_tbl_empleados_hraes:id_tbl_empleados_hraes
+        id_tbl_empleados_hraes:id_tbl_empleados_hraes,
+        carrera:carrera_ca,
+        cedula: $("#cedula_ca").val(),
     },
         function (data) {
             if (data == 'edit'){

@@ -18,6 +18,7 @@ $data =
             <th>Acciones</th>
             <th>Nivel de estudio</th>
             <th>Carrera</th>
+            <th>Cedúla</th>
         </tr>
     </thead>';
 
@@ -40,6 +41,9 @@ if (pg_num_rows($listado) > 0) {
                             </td>
                             <td>
                                 ' . $row[2] . '
+                            </td>
+                            <td>
+                                ' . $row[3] . '
                             </td>
                         </tr>
                     </tbody>
