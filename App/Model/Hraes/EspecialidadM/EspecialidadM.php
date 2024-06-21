@@ -5,7 +5,8 @@ class ModelEspecialidadM
     function listarById($id_object, $paginator)
     {
         $listado = pg_query("SELECT ctrl_especialidad_hraes.id_ctrl_especialidad_hraes,
-                                    cat_especialidad_hraes.especialidad
+                                    cat_especialidad_hraes.especialidad,
+                                    ctrl_especialidad_hraes.cedula
                             FROM ctrl_especialidad_hraes
                             INNER JOIN cat_especialidad_hraes
                             ON ctrl_especialidad_hraes.id_cat_especialidad_hraes =
@@ -19,14 +20,16 @@ class ModelEspecialidadM
     function listarByBusqueda($id_object, $busqueda,$paginator)
     {
         $listado = pg_query("SELECT ctrl_especialidad_hraes.id_ctrl_especialidad_hraes,
-                                    cat_especialidad_hraes.especialidad
+                                    cat_especialidad_hraes.especialidad,
+                                    ctrl_especialidad_hraes.cedula
                             FROM ctrl_especialidad_hraes
                             INNER JOIN cat_especialidad_hraes
                             ON ctrl_especialidad_hraes.id_cat_especialidad_hraes =
                                 cat_especialidad_hraes.id_cat_especialidad_hraes
                             WHERE ctrl_especialidad_hraes.id_tbl_empleados_hraes = $id_object
-                            AND TRIM(UPPER(UNACCENT(cat_especialidad_hraes.especialidad)))
+                            AND (TRIM(UPPER(UNACCENT(cat_especialidad_hraes.especialidad)))
                                 LIKE '%$busqueda%'
+                            OR ctrl_especialidad_hraes.cedula LIKE '%$busqueda%')
                             ORDER BY ctrl_especialidad_hraes.id_ctrl_especialidad_hraes DESC
                             LIMIT 3 OFFSET $paginator;");
         return $listado;
@@ -34,8 +37,7 @@ class ModelEspecialidadM
 
     function listarByIdEdit($id_object)
     {
-        $listado = pg_query("SELECT id_ctrl_especialidad_hraes, id_tbl_empleados_hraes,
-                                    id_cat_especialidad_hraes
+        $listado = pg_query("SELECT *
                              FROM ctrl_especialidad_hraes
                              WHERE id_ctrl_especialidad_hraes = $id_object");
         return $listado;
@@ -57,5 +59,17 @@ class ModelEspecialidadM
     {
         $pgs_delete = pg_delete($conexion, 'ctrl_especialidad_hraes', $condicion);
         return $pgs_delete;
+    }
+
+    public function listarByNull()
+    {
+        return $array = [
+            'id_ctrl_especialidad_hraes' => null,
+            'id_tbl_empleados_hraes' => null,
+            'id_cat_especialidad_hraes' => null,
+            'especialidad_hist' => null,
+            'cedula' => null,
+            'especialidad' => null,
+        ];
     }
 }

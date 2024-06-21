@@ -286,7 +286,6 @@ function guardarRetardo() {
                 mensajeError(data);
             }
             $("#agregar_editar_retardo").modal("hide");
-            buscarRetardo();
         }
     );
 //}

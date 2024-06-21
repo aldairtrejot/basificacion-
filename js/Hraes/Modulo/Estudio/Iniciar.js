@@ -42,6 +42,10 @@ function agregarEditarEstudio(id_object){
 
             var carrera = jsonData.carrera;
 
+            var cedula_ca = jsonData.cedula_ca;
+            var carrera_ca = jsonData.carrera_ca;
+            var carrera_ca = jsonData.carrera_ca;
+
             $('#id_cat_nivel_estudios').empty();
             $('#id_cat_nivel_estudios').html(estudio);
             

@@ -24,7 +24,7 @@ function buscarInfoEmpleado(id_tbl_empleados_hraes){
 
 function iniciarEscolaridad(){
     buscarEstudio();
-    buscarCedula();
+    //buscarCedula();
     buscarEspecialidad();
 }
 

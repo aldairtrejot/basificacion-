@@ -29,6 +29,9 @@ if ($id_object != null){
     $var = [
         'estudio' => $estudio,
         'carrera' => $carrera,
+        'cedula_ca' => null,
+        'carrera_ca' => null,
+        'estudio_id' => null,
     ];
     echo json_encode($var);
 }
