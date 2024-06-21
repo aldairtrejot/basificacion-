@@ -47,8 +47,8 @@
                         <div class="col-12">
                             <label class="text-input-form div-spacing text-input-rem">C&eacutedula
                                 profesional</label><label class="text-required">*</label>
-                            <input oninput="validarNumero(this)" type="number" class="form-control" id="cedula_esp"
-                                placeholder="Cédula profesional" maxlength="25">
+                            <input  onkeyup="convertirAMayusculas(event,'cedula_esp')" type="text" class="form-control" id="cedula_esp"
+                                placeholder="Cédula profesional" maxlength="20">
                         </div>
                     </div>
 

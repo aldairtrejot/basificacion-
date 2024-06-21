@@ -1,7 +1,7 @@
 <?php
-$password = "sirh2024";
+$password = "pg2024";
 $username = "postgres";
-$dbname = "basificacion_test";
+$dbname = "basificacion";
 $host = "localhost";
 $port = "5432";
 $options = "--client_encoding=UTF8";

@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-6">
         <div class="card font-size-modulo shadow-lg">
-            <h5 class="card-header text-center background-modal color-text-tittle">Jefe inmediato</h5>
+            <h5 class="card-header text-center background-modal color-text-tittle">Idioma / Lengua</h5>
             <div class="card-body">
                 <?php include 'Jefe/index.php' ?>
             </div>

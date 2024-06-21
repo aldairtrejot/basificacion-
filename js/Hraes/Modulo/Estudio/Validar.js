@@ -6,7 +6,6 @@ function validarEstudio(){
 
     if (validarData(id_cat_nivel_estudios,'Nivel de estudio') &&
     validarData(id_cat_carrera_hraes,'Carrera') &&
-    validarData(cedula_ca,'Cédula profesional') &&
     caracteresCount('Cédula profesional',20,cedula_ca)
     ){
         if (id_cat_carrera_hraes == 160){

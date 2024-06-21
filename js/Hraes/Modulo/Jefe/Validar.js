@@ -1,7 +1,7 @@
 function validarJefe(){
-    let jefe_inmediato = document.getElementById('jefe_inmediato').value.trim();
+    let id_cat_lengua_idioma = document.getElementById('id_cat_lengua_idioma').value.trim();
 
-    if (validarData(jefe_inmediato,'Jefe inmediato')
+    if (validarData(id_cat_lengua_idioma,'Seleccione el idioma o lengua')
     ){
         guardarJefe();
     }

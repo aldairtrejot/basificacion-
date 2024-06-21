@@ -53,8 +53,10 @@
                         <div class="col-6">
                             <label class="text-input-form div-spacing">N&uacutem. de empleado</label><label
                                 class="text-required">*</label>
-                            <input onkeyup="convertirAMayusculas(event,'num_empleado')" maxlength="30" type="text"
-                                class="form-control" id="num_empleado" placeholder="Núm de empleado">
+                            <fieldset id="num_empleado_dis" disabled>
+                                <input onkeyup="convertirAMayusculas(event,'num_empleado')" maxlength="30" type="text"
+                                    class="form-control" id="num_empleado" placeholder="Núm de empleado">
+                            </fieldset>
                         </div>
                     </div>
 

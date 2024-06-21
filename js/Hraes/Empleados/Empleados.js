@@ -83,6 +83,14 @@ function agregarEditarDetalles(id_object) { //SE OBTIENEN INFO DE ID SELECCIONAD
                 $("#genero_x").val(generoCurp(entity.curp));
             }
             
+            
+            let num_empleado_dis = document.getElementById('num_empleado_dis');
+            num_empleado_dis.disabled = true;
+            
+            if (id_object == null){
+                num_empleado_dis.disabled = false;
+            }
+
             $("#nombre").val(entity.nombre);
             $("#rfc").val(entity.rfc);
             $("#primer_apellido").val(entity.primer_apellido);

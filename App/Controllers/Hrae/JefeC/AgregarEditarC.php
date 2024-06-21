@@ -5,11 +5,11 @@ $modelJefeM = new ModelJefeM();
 $bitacoraM = new BitacoraM();
 
 $condicion = [
-    'id_ctrl_jefe_inmediato_hraes' => $_POST['id_object']
+    'id_ctrl_lengua_idioma' => $_POST['id_object']
 ];
 
 $datos = [
-    'jefe_inmediato' => $_POST['jefe_inmediato'],
+    'id_cat_lengua_idioma' => $_POST['id_cat_lengua_idioma'],
     'id_tbl_empleados_hraes' => $_POST['id_tbl_empleados_hraes']
 ];
 
@@ -21,7 +21,7 @@ $var = [
 if ($_POST['id_object'] != null) { //Modificar
     if ($modelJefeM->editarByArray($connectionDBsPro, $datos, $condicion)) {
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_jefe_inmediato_hraes',
+            'nombre_tabla' => 'ctrl_lengua_idioma',
             'accion' => 'MODIFICAR',
             'valores' => json_encode($var),
             'fecha' => $timestamp,
@@ -34,7 +34,7 @@ if ($_POST['id_object'] != null) { //Modificar
 } else { //Agregar
     if ($modelJefeM->agregarByArray($connectionDBsPro, $datos)) {
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_jefe_inmediato_hraes',
+            'nombre_tabla' => 'ctrl_lengua_idioma',
             'accion' => 'AGREGAR',
             'valores' => json_encode($var),
             'fecha' => $timestamp,

@@ -17,11 +17,20 @@ $catEstadoM = new CatEstadoM();
 $id_object = $_POST['id_object'];
 
 if ($id_object != null) {
-    $response = $row->returnArray($model -> listarByIdEdit($id_object));
-    $estadoCivil = $catEstadoCivilC->selectById($catEstadoCivilM->listarByAll(),$row->returnArrayById($catEstadoCivilM->obtenerElemetoById($response['id_cat_estado_civil'])));
-    $pais = $catPaisC->selectById($catPaisM->listarByAll(),$row->returnArrayById($catPaisM->listarById($response['id_cat_pais_nacimiento'])));
-    $estado = $catEstadoC->selectById($catEstadoM->listarEstado($response['id_cat_pais_nacimiento']),$row->returnArrayById($catEstadoM->listarById($response['id_cat_estado_nacimiento'])));
+    $response = $row->returnArray($model->listarByIdEdit($id_object));
+    $estadoCivil = $catEstadoCivilC->selectById($catEstadoCivilM->listarByAll(), $row->returnArrayById($catEstadoCivilM->obtenerElemetoById($response['id_cat_estado_civil'])));
+
     $nacionalidad = $catNacionalidadC->selectById($response['nacionalidad']);
+
+    $pais = $catPaisC->selectByAll($catPaisM->listarByAll());
+    $estado = $catSelectC->selecStaticByNull();
+
+    
+    if ($response['id_cat_pais_nacimiento'] != '') {
+        $pais = $catPaisC->selectById($catPaisM->listarByAll(), $row->returnArrayById($catPaisM->listarById($response['id_cat_pais_nacimiento'])));
+        $estado = $catEstadoC->selectById($catEstadoM->listarEstado($response['id_cat_pais_nacimiento']), $row->returnArrayById($catEstadoM->listarById($response['id_cat_estado_nacimiento'])));
+    }
+
     $var = [
         'response' => $response,
         'estadoCivil' => $estadoCivil,

@@ -38,9 +38,13 @@ function agregarEditarJefe(id_object){
     },
         function (data) {
             var jsonData = JSON.parse(data);//se obtiene el json
-            var entity = jsonData.response; //Se agrega a emtidad 
+            var catalogoLengua = jsonData.catalogoLengua; //Se agrega a emtidad 
 
-            $("#jefe_inmediato").val(entity.jefe_inmediato);
+            $('#id_cat_lengua_idioma').empty();
+            $('#id_cat_lengua_idioma').html(catalogoLengua); 
+            $('#id_cat_lengua_idioma').selectpicker('refresh');
+            $('.selectpicker').selectpicker();
+
         }
     );
 
@@ -54,15 +58,15 @@ function salirAgregarEditarCedula(){
 
 function guardarJefe() {
     $.post("../../../../App/Controllers/Hrae/JefeC/AgregarEditarC.php", {
-        jefe_inmediato: $("#jefe_inmediato").val(),
+        id_cat_lengua_idioma: $("#id_cat_lengua_idioma").val(),
         id_object: $("#id_object").val(),
         id_tbl_empleados_hraes:id_tbl_empleados_hraes,
     },
         function (data) {
             if (data == 'edit'){
-                mensajeExito('Jefe inmediato modificado con éxito');
+                mensajeExito('idioma o lengua modificado con éxito');
             } else if (data == 'add') {
-                mensajeExito('Jefe inmediato agregado con éxito');  
+                mensajeExito('idioma o lengua agregado con éxito');  
             } else {
                 mensajeError(data);
             }
@@ -89,7 +93,7 @@ function eliminarJefe(id_object) {//ELIMINAR USUARIO
             },
             function (data) {
                 if (data == 'delete'){
-                    mensajeExito('Jefe inmediato eliminado con éxito')
+                    mensajeExito('idioma o lengua eliminado con éxito')
                 } else {
                     mensajeError(data);
                 }

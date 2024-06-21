@@ -3,18 +3,21 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header background-modal">
-                <h5 class="modal-title text-modal-tittle"><label id="tituloJefe" class="text-modal-tittle"></label> jefe
-                    inmediato.</h5>
+                <h5 class="modal-title text-modal-tittle"><label id="tituloJefe" class="text-modal-tittle"></label>.
+                </h5>
             </div>
 
             <div class="card-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <label class="text-input-form div-spacing text-input-rem">Nombre de jefe inmediato</label><label
+                            <label class="text-input-form div-spacing text-input-rem">Seleccione el idioma o lengua</label><label
                                 class="text-required">*</label>
-                            <input onkeyup="convertirAMayusculas(event,'jefe_inmediato')" type="text" class="form-control" id="jefe_inmediato" placeholder="Jefe inmediato"
-                                maxlength="60">
+                            <select data-style="input-select-selectpicker form-control"
+                                class="selectpicker form-control" aria-label="Default select example"
+                                data-live-search="true" id="id_cat_lengua_idioma"
+                                data-none-results-text="Sin resultados">
+                            </select>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
         <div class="form-inline">
             <button onclick="agregarEditarJefe(null)" class="btn btn-light"><i
                     class="fa fa-plus icon-size-add"></i>
-                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar jefe inmediato</span>
+                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar</span>
             </button>
         </div>
     </div>
