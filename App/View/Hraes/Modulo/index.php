@@ -47,7 +47,6 @@ if ($id_tbl_empleados_hraes == null) {
             </div>
 
             <div class="row">
-
                 <div class="col-4">
                     <h6 class="text-input-form-bold-label  div-spacing">RFC: <label class="text-result-normal"
                             id="rfcResult"></label>

@@ -205,12 +205,12 @@ class ModelMovimientosM
         }
 
         public function returnNivelesPuesto($idPlaza){
-            $listado = pg_query("SELECT CONCAT(cat_puesto.codigo_puesto, '-', cat_puesto.nombre_posicion),
+            $listado = pg_query("SELECT CONCAT(cat_puesto_hraes.codigo_puesto, ' - ',cat_puesto_hraes.nombre_posicion),
                                         cat_niveles_hraes.codigo
                                 FROM tbl_control_plazas_hraes
-                                INNER JOIN cat_puesto
+                                INNER JOIN cat_puesto_hraes
                                 ON tbl_control_plazas_hraes.id_cat_puesto_hraes = 
-                                    cat_puesto.id_cat_puesto
+                                    cat_puesto_hraes.id_cat_puesto_hraes
                                 INNER JOIN cat_niveles_hraes
                                 ON tbl_control_plazas_hraes.id_cat_niveles_hraes =
                                     cat_niveles_hraes.id_cat_niveles_hraes
