@@ -183,4 +183,38 @@ class ModelMovimientosM
                                  LIMIT 1;");
             return $listado;
         }
+
+        public function countEmpleadoPlaza($idEmpleado){
+            $listado = pg_query("SELECT COUNT (id_tbl_plazas_empleados_hraes)
+                                 FROM tbl_plazas_empleados_hraes
+                                 WHERE id_tbl_empleados_hraes = $idEmpleado");
+            return $listado;
+        }
+
+        public function ultimoMovimiento($idEmpleado){
+            $listado = pg_query("SELECT tbl_movimientos.id_tipo_movimiento,
+                                        tbl_plazas_empleados_hraes.id_tbl_control_plazas_hraes
+                                FROM tbl_plazas_empleados_hraes
+                                INNER JOIN tbl_movimientos
+                                ON tbl_plazas_empleados_hraes.id_tbl_movimientos =
+                                    tbl_movimientos.id_tbl_movimientos
+                                WHERE tbl_plazas_empleados_hraes.id_tbl_empleados_hraes = $idEmpleado
+                                ORDER BY tbl_plazas_empleados_hraes.id_tbl_plazas_empleados_hraes DESC
+                                LIMIT 1;");
+            return $listado;
+        }
+
+        public function returnNivelesPuesto($idPlaza){
+            $listado = pg_query("SELECT CONCAT(cat_puesto.codigo_puesto, '-', cat_puesto.nombre_posicion),
+                                        cat_niveles_hraes.codigo
+                                FROM tbl_control_plazas_hraes
+                                INNER JOIN cat_puesto
+                                ON tbl_control_plazas_hraes.id_cat_puesto_hraes = 
+                                    cat_puesto.id_cat_puesto
+                                INNER JOIN cat_niveles_hraes
+                                ON tbl_control_plazas_hraes.id_cat_niveles_hraes =
+                                    cat_niveles_hraes.id_cat_niveles_hraes
+                                WHERE tbl_control_plazas_hraes.id_tbl_control_plazas_hraes = $idPlaza;");
+            return $listado;
+        }
 }

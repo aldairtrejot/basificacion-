@@ -39,6 +39,11 @@ if ($id_tbl_empleados_hraes == null) {
                             id="numEmpleadoResult" class="text-result-normal"></label>
                     </h6>
                 </div>
+                <div class="col-4">
+                    <h6 class="text-input-form-bold-label  div-spacing">Puesto: <label class="text-result-normal"
+                            id="puestoResult"></label>
+                    </h6>
+                </div>
             </div>
 
             <div class="row">
@@ -52,6 +57,11 @@ if ($id_tbl_empleados_hraes == null) {
                 <div class="col-4">
                     <h6 class="text-input-form-bold-label  div-spacing">CURP: <label class="text-result-normal"
                             id="curpResult"></label>
+                    </h6>
+                </div>
+                <div class="col-4">
+                    <h6 class="text-input-form-bold-label  div-spacing">Nivel: <label class="text-result-normal"
+                            id="nivelResult"></label>
                     </h6>
                 </div>
             </div>
