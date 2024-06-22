@@ -6,7 +6,7 @@
             <input onkeyup="buscarInfor();" type="number" class="form-control" id="codigo_postal1"
                 placeholder="Código postal" maxlength="25">
         </div>
-        <div class="col-4">
+        <div class="col-5">
             <label class="text-input-rem div-spacing">Municipio</label><label class="text-required">*</label>
             <select data-style="input-select-selectpicker form-control" class="selectpicker form-control"
                 aria-label="Default select example" data-live-search="true" id="municipio1"
@@ -20,7 +20,7 @@
 -->
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
             <label class="text-input-rem div-spacing">Entidad</label><label class="text-required">*</label>
             <fieldset disabled>
                 <input type="text" class="form-control" id="entidad1" placeholder="Entidad" maxlength="25">
@@ -28,9 +28,10 @@
         </div>
 
         <div class="col-2">
-            <label class="text-input-rem div-spacing">Pa&iacutes</label><label class="text-required">*</label>
+            <!--
+            <label class="text-input-rem div-spacing">Pa&iacutes</label><label class="text-required">*</label>-->
             <fieldset disabled>
-                <input type="text" class="form-control" id="pais_f" placeholder="MÉXICO" maxlength="25">
+                <input type="hidden" class="form-control" id="pais_f" placeholder="MÉXICO" maxlength="25">
             </fieldset>
         </div>
     </div>
@@ -76,7 +77,7 @@
             <input type="text" class="form-control" onkeyup="convertirAMayusculas(event,'num_interior1')"
                 id="num_interior1" placeholder="Núm. interior" maxlength="10">
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <label class="text-input-rem div-spacing">C&oacutedigo postal f&iacutescal</label><label
                 class="text-required"></label>
             <input oninput="validarNumero(this)" type="number" class="form-control" id="codigo_postal2"

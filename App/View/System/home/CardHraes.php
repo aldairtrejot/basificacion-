@@ -1,6 +1,6 @@
 <hr>
 <div class="row">
-    <div class="col-4">
+    <div class="col-5">
         <div class="card border-light shadow-lg">
             <div class="card-body">
                 <div class="d-flex align-items-center mb-2">

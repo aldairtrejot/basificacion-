@@ -1,16 +1,25 @@
 <div class="card border-light">
     <div class="row font-size-modulo">
-        <div class="col-4">
+        <div class="col-6">
             <label class="text-input-rem div-spacing">Fecha de expedici&oacuten</label><label
                 class="text-required"></label>
             <input type="date" class="form-control" id="fecha_expedicion" placeholder="">
         </div>
-        <div class="col-4">
+        <div class="col-6">
             <label class="text-input-rem div-spacing">Fecha de ingreso al gobierno federal</label><label
                 class="text-required"></label>
             <input type="date" class="form-control" id="fecha_ingreso_gob_fed" placeholder="">
         </div>
-        <div class="col-4">
+        
+    </div>
+
+    <div class="div-spacing"></div>
+    <div class="row">
+        <div class="col-6">
+            <label class="text-input-rem div-spacing">Fecha IMSS-BIENESTAR</label><label class="text-required"></label>
+            <input type="date" class="form-control" id="vigencia_al" placeholder="">
+        </div>
+        <div class="col-6">
             <label class="text-input-rem div-spacing">Fecha CLUES</label><label class="text-required"></label>
             <input type="date" class="form-control" id="vigencia_del" placeholder="">
         </div>
@@ -18,11 +27,7 @@
 
     <div class="div-spacing"></div>
     <div class="row">
-        <div class="col-4">
-            <label class="text-input-rem div-spacing">Fecha IMSS-BIENESTAR</label><label class="text-required"></label>
-            <input type="date" class="form-control" id="vigencia_al" placeholder="">
-        </div>
-        <div class="col-8">
+        <div class="col-12">
             <label class="text-input-rem div-spacing">Antiguedad</label><label class="text-required"></label>
             <input maxlength="60" type="text" class="form-control" onkeyup="convertirAMayusculas(event,'antiguedad')" id="antiguedad" placeholder="Antiguedad">
         </div>
