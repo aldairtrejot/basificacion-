@@ -81,6 +81,8 @@ function agregarEditarDetalles(id_object) { //SE OBTIENEN INFO DE ID SELECCIONAD
 
             if (entity.curp != null){
                 $("#genero_x").val(generoCurp(entity.curp));
+                $("#fecha_x_na").val(obtenerFechaNacimiento(entity.curp));
+                $("#edad_x_s").val(diferenciaEntreFechas(obtenerFechaNacimiento(entity.curp),'2024-06-22'));
             }
             
             

@@ -145,6 +145,27 @@
                                 placeholder="Número de seguro social">
                         </div>
                     </div>
+
+                    <div class="div-spacing"></div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="text-input-form div-spacing">Fecha de nacimiento</label><label
+                                class="text-required">*</label>
+                            <fieldset disabled>
+                                <input type="date" class="form-control" id="fecha_x_na" placeholder="Género"
+                                    maxlength="25">
+                            </fieldset>
+                        </div>
+                        <div class="col-4">
+                            <label class="text-input-form div-spacing">Edad</label><label
+                                class="text-required">*</label>
+                            <fieldset disabled>
+                                <input type="text" class="form-control" id="edad_x_s" placeholder="Edad"
+                                    maxlength="25">
+                            </fieldset>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
