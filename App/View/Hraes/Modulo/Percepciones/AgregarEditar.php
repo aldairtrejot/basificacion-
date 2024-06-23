@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header background-modal">
                 <h5 class="modal-title text-modal-tittle"><label id="titulo_percepcion"
-                        class="text-modal-tittle"></label> percepci&oacuten</h5>
+                        class="text-modal-tittle"></label> test.</h5>
             </div>
 
             <div class="card-body">

@@ -1,25 +1,56 @@
-SELECT UPPER(tbl_centro_trabajo_hraes.clave_centro_trabajo),
-		UPPER (tbl_centro_trabajo_hraes.pais),
-		UPPER (tbl_centro_trabajo_hraes.colonia),
-		UPPER (tbl_centro_trabajo_hraes.codigo_postal),
-		UPPER (tbl_centro_trabajo_hraes.num_exterior),
-		UPPER (tbl_centro_trabajo_hraes.num_interior),
-		UPPER (tbl_centro_trabajo_hraes.latitud),
-		UPPER (tbl_centro_trabajo_hraes.longitud),
-		UPPER (CONCAT(cat_region.clave_region,' - ',cat_region.region)),
-		UPPER (cat_estatus.estatus),
-		UPPER (CONCAT(cat_entidad.clave_entidad, ' - ', cat_entidad.entidad))
-FROM tbl_centro_trabajo_hraes
-INNER JOIN cat_region
-	ON tbl_centro_trabajo_hraes.id_cat_region =
-		cat_region.id_cat_region
-INNER JOIN cat_estatus
-	ON tbl_centro_trabajo_hraes.id_estatus_centro =
-		cat_estatus.id_cat_estatus
-INNER JOIN cat_entidad
-	ON tbl_centro_trabajo_hraes.id_cat_entidad =
-		cat_entidad.id_cat_entidad
+-----------------------------
+-----------------------------
+-----------------------------
 
+UPDATE cat_estatus_bas
+SET 
+	nombre = 'CONCLUIDO'
+WHERE 
+	id_cat_estatus_bas = 1;
+	
+UPDATE cat_estatus_bas
+SET 
+	nombre = 'RECHAZADO'
+WHERE 
+	id_cat_estatus_bas = 2;
+	
+INSERT INTO cat_estatus_bas (nombre) VALUES ('INICIO');
+
+
+DROP TABLE IF EXISTS cat_test_bas;
+CREATE TABLE IF NOT EXISTS cat_test_bas (
+	id_cat_test_bas SERIAL PRIMARY KEY,
+	nombre VARCHAR(20)
+);
+
+INSERT INTO cat_test_bas (nombre) VALUES ('PSICOMETRICO');
+
+DROP TABLE IF EXISTS cat_estatus_test;
+CREATE TABLE IF NOT EXISTS cat_estatus_test (
+	id_cat_estatus_test SERIAL PRIMARY KEY,
+	nombre VARCHAR(20)
+);
+
+INSERT INTO cat_estatus_test (nombre) VALUES ('APROBADO'), ('NO APROBADO');
+
+DROP TABLE IF EXISTS ctrl_test_bas;
+CREATE TABLE IF NOT EXISTS ctrl_test_bas(
+	id_ctrl_test_bas SERIAL PRIMARY KEY,
+	id_cat_estatus_test INTEGER,
+	id_cat_test_bas INTEGER,
+	id_tbl_empleados_hraes INTEGER
+);
+
+
+
+
+
+
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
 
 
 

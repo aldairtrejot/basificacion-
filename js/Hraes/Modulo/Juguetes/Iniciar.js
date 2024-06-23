@@ -41,19 +41,15 @@ function agregarEditarJuguete(id_object){
     },
         function (data) {
             var jsonData = JSON.parse(data);
-            var entity = jsonData.response; 
-            var dependiente = jsonData.dependiente;
-            var fecha = jsonData.fecha;  
-            var estatus = jsonData.estatus;
-            var value = jsonData.value;
+            let test_j = jsonData.test_j; 
+            let estatus_j = jsonData.estatus_j; 
 
-            $('#id_ctrl_dependientes_economicos_j').empty();
-            $('#id_ctrl_dependientes_economicos_j').html(dependiente); 
-            $('#id_cat_fecha_juguetes_j').empty();
-            $('#id_cat_fecha_juguetes_j').html(fecha); 
-            $('#id_cat_estatus_juguetes_j').empty();
-            $('#id_cat_estatus_juguetes_j').html(estatus); 
-            $('#curp_j').val(value.curp);
+            $('#cat_test_bas').empty();
+            $('#cat_test_bas').html(test_j);
+
+            $('#cat_estatus_test').empty();
+            $('#cat_estatus_test').html(estatus_j);
+
         }
     );
 
@@ -66,23 +62,18 @@ function salirAgregarEditarJuguete(){
 
 
 function agregarEditarByDbByJuguete() {
-    let id_ctrl_dependientes_economicos_hraes = $("#id_ctrl_dependientes_economicos_j").val();
-    let id_cat_fecha_juguetes = $("#id_cat_fecha_juguetes_j").val();
-    let id_cat_estatus_juguetes = $("#id_cat_estatus_juguetes_j").val();
-    let id_object = $("#id_object").val();
 
     $.post("../../../../App/Controllers/Hrae/JuguetesC/AgregarEditarC.php", {
-        id_object: id_object,
-        id_ctrl_dependientes_economicos_hraes: id_ctrl_dependientes_economicos_hraes,
-        id_cat_fecha_juguetes:id_cat_fecha_juguetes,
-        id_cat_estatus_juguetes:id_cat_estatus_juguetes,
+        id_object: $("#id_object").val(),
+        cat_test_bas: $("#cat_test_bas").val(),
+        cat_estatus_test:$("#cat_estatus_test").val(),
         id_tbl_empleados_hraes:id_tbl_empleados_hraes
     },
         function (data) {
             if (data == 'edit'){
-                mensajeExito('Dependiente modificado en módulo de juguetes');
+                mensajeExito('Test modificado con éxito');
             } else if (data == 'add') {
-                mensajeExito('Dependiente agregado al módulo de juguetes');  
+                mensajeExito('Test agregado con éxito');  
             } else {
                 mensajeError(data);
             }
@@ -110,7 +101,7 @@ function eliminarJuguete(id_object) {
             },
             function (data) {
                 if (data == 'delete'){
-                    mensajeExito('Dependiente eliminado del módulo de juguetes')
+                    mensajeExito('Test eliminado con éxito')
                 } else {
                     mensajeError(data);
                 }

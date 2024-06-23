@@ -17,7 +17,7 @@
     </div>
 -->
     <div class="col-5 search-container">
-        <input onkeyup="buscarJuguete();" id="buscar_ju" type="text" placeholder="Buscar..."
+        <input onkeyup="buscarJuguete();" id="123_buscar_ju_xs  " type="text" placeholder="Buscar..."
             class="form-control mr-sm-2 search-input">
         <span class="search-icon"><i class="fas fa-search"></i></span>
     </div>

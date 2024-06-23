@@ -2,7 +2,7 @@
     <div class="col-9">
         <div class="form-inline">
             <button onclick="agregarEditarJuguete(null)" class="btn btn-light"><i class="fa fa-plus icon-size-add"></i>
-                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar dependiente al programa</span>
+                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar</span>
             </button>
         </div>
     </div>
@@ -53,7 +53,7 @@
     <!--
 
     <div class="col-5 search-container">
-        <input onkeyup="buscarJuguete();" id="buscar_ju" type="text" placeholder="Buscar..."
+        <input onkeyup="buscarJuguete();" id="buscar_ju_x" type="text" placeholder="Buscar..."
             class="form-control mr-sm-2 search-input">
         <span class="search-icon"><i class="fas fa-search"></i></span>
     </div>

@@ -2,7 +2,7 @@
     <div class="col-9">
         <div class="form-inline">
             <button onclick="agregarEditarPercepcion(null)" class="btn btn-light"><i class="fa fa-plus icon-size-add"></i>
-                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar percepci&oacuten</span>
+                <span class="hide-menu text-button-add font-size-modulo">&nbsp;Agregar</span>
             </button>
         </div>
     </div>

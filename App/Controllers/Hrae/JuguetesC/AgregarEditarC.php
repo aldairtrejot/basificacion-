@@ -5,13 +5,12 @@ $modelJuguetesM = new ModelJuguetesM();
 $bitacoraM = new BitacoraM();
 
 $condicion = [
-    'id_ctrl_juguetes_hraes' => $_POST['id_object']
+    'id_ctrl_test_bas' => $_POST['id_object']
 ];
 
 $datos = [
-    'id_ctrl_dependientes_economicos_hraes' => $_POST['id_ctrl_dependientes_economicos_hraes'],
-    'id_cat_fecha_juguetes' => $_POST['id_cat_fecha_juguetes'],
-    'id_cat_estatus_juguetes' => $_POST['id_cat_estatus_juguetes'],
+    'id_cat_estatus_test' => $_POST['cat_estatus_test'],
+    'id_cat_test_bas' => $_POST['cat_test_bas'],
     'id_tbl_empleados_hraes' => $_POST['id_tbl_empleados_hraes'],
 ];
 
@@ -23,7 +22,7 @@ $var = [
 if ($_POST['id_object'] != null) { //Modificar
     if ($modelJuguetesM ->editarByArray($connectionDBsPro, $datos, $condicion)) {
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_juguetes_hraes',
+            'nombre_tabla' => 'ctrl_test_bas',
             'accion' => 'MODIFICAR',
             'valores' => json_encode($var),
             'fecha' => $timestamp,
@@ -36,7 +35,7 @@ if ($_POST['id_object'] != null) { //Modificar
 } else { //Agregar
     if ($modelJuguetesM ->agregarByArray($connectionDBsPro, $datos)) {
         $dataBitacora = [
-            'nombre_tabla' => 'ctrl_juguetes_hraes',
+            'nombre_tabla' => 'ctrl_test_bas',
             'accion' => 'AGREGAR',
             'valores' => json_encode($var),
             'fecha' => $timestamp,

@@ -2,45 +2,64 @@
 include '../librerias.php';
 
 $id_object_d = $_POST['id_object'];
-$id_tbl_empleados_hraes = $_POST['id_tbl_empleados_hraes'];
-
 $modelJuguetesM = new ModelJuguetesM();
-$catDependientesM = new CatDependientesM();
-$catDependientesC = new CatDependientesC();
-$catFechaJuguetesC = new CatFechaJuguetesC();
-$catFechaJuguetesM = new CatFechaJuguetesM();
-$catEstatusJuguetesC = new CatEstatusJuguetesC();
-$catEstatusJuguetesM = new CatEstatusJuguetesM();
-
 $row = new row();
 
 if ($id_object_d != null) {
     $response = $row->returnArray($modelJuguetesM->listarEditById($id_object_d));
-    $dependiente = $catDependientesC->selectByIdObject($catDependientesM->listarByAll($id_tbl_empleados_hraes),$row->returnArrayById($catDependientesM->obtenerElemetoById($response['id_ctrl_dependientes_economicos_hraes'])));
-    $fecha = $catFechaJuguetesC ->selectById($catFechaJuguetesM->listarByAll(),$row->returnArrayById($catFechaJuguetesM->obtenerElemetoById($response['id_cat_fecha_juguetes'])));
-    $estatus = $catEstatusJuguetesC->selectEstatusByIdObject($catEstatusJuguetesM->listarByAll(),$row->returnArrayById($catEstatusJuguetesM->obtenerElemetoById($response['id_cat_estatus_juguetes'])));
-    $value = $row ->returnArray($catDependientesM->obtenerElemetoByCurp($response['id_ctrl_dependientes_economicos_hraes']));
+    $test = catalogoAllEdit_j(catalogo_j('cat_test_bas'),$row->returnArrayById(catalogoEdit_j('cat_test_bas','id_cat_test_bas',$response['id_cat_test_bas'])));
+    $estatus = catalogoAllEdit_j(catalogo_j('cat_estatus_test'),$row->returnArrayById(catalogoEdit_j('cat_estatus_test','id_cat_estatus_test',$response['id_cat_estatus_test'])));
+
     $var = [
-        'response' => $response,
-        'dependiente' => $dependiente,
-        'fecha' => $fecha,
-        'estatus' => $estatus,
-        'value' => $value,
+        'test_j' => $test,
+        'estatus_j' => $estatus,
     ];
-    echo json_encode($var);
 
 } else {
-    $response = $modelJuguetesM ->listarByNull();
-    $dependiente = $catDependientesC->selectAll($catDependientesM->listarByAll($id_tbl_empleados_hraes));
-    $fecha = $catFechaJuguetesC->selectAll($catFechaJuguetesM->listarByAll());
-    $estatus = $catEstatusJuguetesC ->selectAll($catEstatusJuguetesM->listarByAll());
-    $value = 'curp';
+    $test = catalogoAll_j(catalogo_j('cat_test_bas'));
+    $estatus = catalogoAll_j(catalogo_j('cat_estatus_test'));
+    
     $var = [
-        'response' => $response,
-        'dependiente' => $dependiente,
-        'fecha' => $fecha,
-        'estatus' => $estatus,
-        'value' => $value,
+        'test_j' => $test,
+        'estatus_j' => $estatus,
     ];
-    echo json_encode($var);
 }
+
+echo json_encode($var);
+
+
+
+
+function catalogo_j($tableName){
+    $listado = pg_query("SELECT *
+                        FROM $tableName
+                        ORDER BY nombre");
+    return $listado;
+}
+
+function catalogoEdit_j($tableName, $id, $value){
+    $listado = pg_query("SELECT *
+                        FROM $tableName
+                        WHERE $id = $value");
+    return $listado;
+}
+
+function catalogoAll_j($resultados)
+    {
+        $options = '<option value="">Seleccione</option>';
+        while ($row = pg_fetch_array($resultados)) {
+            $options .= '<option value="' . $row [0] . '">' . $row [1] . '</option>';
+        }
+        return $options;
+    }
+
+    function catalogoAllEdit_j($resultados, $value)
+    {
+        $options = '<option value="' . $value [0] . '">' . $value [1] . '</option>';
+        while ($row = pg_fetch_array($resultados)) {
+            if ($row [0] != $value[0]){
+                $options .= '<option value="' . $row [0] . '">' . $row [1] . '</option>';
+            }
+        }
+        return $options;
+    }

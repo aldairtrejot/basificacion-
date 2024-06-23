@@ -1,49 +1,33 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true" id="agregar_editar_juguete">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header background-modal">
                 <h5 class="modal-title text-modal-tittle"><label id="titulo_juguete" class="text-modal-tittle"></label>
-                    dependiente.</h5>
+                    test.</h5>
             </div>
 
             <div class="card-body">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6">
-                            <label class="text-input-form div-spacing text-input-rem">Seleccion dependiente
-                                econ&oacutemico</label><label class="text-required">*</label>
+                        <div class="col-12">
+                            <label class="text-input-form div-spacing text-input-rem">Seleccion el tipo de test</label><label class="text-required">*</label>
                             <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
-                                    id="id_ctrl_dependientes_economicos_j" required onchange="handleChange(event)">
+                                    id="cat_test_bas" required onchange="handleChange(event)">
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-input-form div-spacing text-input-rem">Curp</label><label
-                                class="text-required">*</label>
-                            <fieldset disabled>
-                                <input type="text" class="form-control" id="curp_j" placeholder="Curp" maxlength="18"
-                                    disable>
-                            </fieldset>
                         </div>
                     </div>
+
+                    <div class="div-spacing"></div>
                     <div class="row">
-                        <div class="col-6">
-                            <label class="text-input-form div-spacing text-input-rem">Seleccione la fecha</label><label
+                        <div class="col-12">
+                            <label class="text-input-form div-spacing text-input-rem">Seleccione el estatus</label><label
                                 class="text-required">*</label>
                             <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
-                                    id="id_cat_fecha_juguetes_j" required>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-input-form div-spacing text-input-rem">Seleccione un
-                                estatus</label><label class="text-required">*</label>
-                            <div class="custom-select-wrapper">
-                                <select class="form-control" aria-label="Default select example"
-                                    id="id_cat_estatus_juguetes_j" required>
+                                    id="cat_estatus_test" required onchange="handleChange(event)">
                                 </select>
                             </div>
                         </div>

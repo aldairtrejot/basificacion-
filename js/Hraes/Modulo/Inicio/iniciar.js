@@ -58,16 +58,18 @@ function iniciarPersonalBancario(){
 }
 
 function iniciarProgramas(){
-    buscarJuguete();
+    
     //iniciarCampos();
 }
 
 function iniciarIncidencias(){
     buscarRetardo();
+    buscarJuguete();
+    //buscarPercepcion();
 }
 
 function iniciarPercepciones(){
-    buscarPercepcion();
+    
     buscarQuinquenio();
 }
 

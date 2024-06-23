@@ -96,7 +96,7 @@ if ($id_tbl_empleados_hraes == null) {
                                 -->
                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-incidencias"
                                 onclick="iniciarIncidencias();" role="tab" aria-controls="nav-contact"
-                                aria-selected="false"><i class="fa fa-star"></i> Asistencias</a>
+                                aria-selected="false"><i class="fa fa-star"></i> Control y asistencias</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
@@ -126,7 +126,7 @@ if ($id_tbl_empleados_hraes == null) {
                         <div class="tab-pane fade" id="nav-incidencias" role="tabpanel"
                             aria-labelledby="nav-contact-tab">
                             <div class="div-spacing"></div>
-                            <h5 class="card-title tittle-card-index">Asistencias</h5>
+                            <h5 class="card-title tittle-card-index">Control y asistencias</h5>
                             <?php include 'IncidenciasM/index.php' ?>
                         </div>
                         <div class="tab-pane fade" id="nav-percepciones" role="tabpanel"

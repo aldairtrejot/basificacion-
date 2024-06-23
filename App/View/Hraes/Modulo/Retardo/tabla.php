@@ -18,6 +18,7 @@ $data =
         <tr>
             <th>Acciones</th>
             <th>Tipo</th>
+            <th>Estatus</th>
             <th>Fecha</th>
             <th>Hora</th>
         </tr>
@@ -39,6 +40,9 @@ if (pg_num_rows($listado) > 0) {
                                 </td>
                             <td>
                                 ' . $row[3] . '
+                            </td>
+                            <td>
+                                ' . $row[4] . '
                             </td>
                             <td>
                                 ' . $row[1] . '

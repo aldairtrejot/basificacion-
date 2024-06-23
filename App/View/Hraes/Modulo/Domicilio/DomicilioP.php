@@ -60,7 +60,7 @@
         <div class="col-6">
             <label class="text-input-rem div-spacing">Calle</label><label class="text-required"></label>
             <input onkeyup="convertirAMayusculas(event,'calle1')" type="text" class="form-control" id="calle1"
-                placeholder="Calle" maxlength="35">
+                placeholder="Calle" maxlength="90">
         </div>
     </div>
 
