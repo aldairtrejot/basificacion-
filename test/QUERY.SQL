@@ -43,10 +43,6 @@ CREATE TABLE IF NOT EXISTS ctrl_test_bas(
 
 
 DELETE FROM cat_asistencia_bas
-WHERE id_cat_asistencia_bas = 2;
-
-UPDATE cat_asistencia_bas 
-SET nombre = 'ASISTENCIA - DOCUMENTOS'
 WHERE id_cat_asistencia_bas = 1;
 
 
