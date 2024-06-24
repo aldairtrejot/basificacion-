@@ -13,12 +13,18 @@
                         <div class="col-12">
                             <label class="text-input-form div-spacing text-input-rem">Seleccione el nivel de
                                 estudio</label><label class="text-required">*</label>
-                            <select data-style="input-select-selectpicker form-control"
+                                <div class="custom-select-wrapper">
+                                <select class="form-control" aria-label="Default select example"
+                                    id="id_cat_nivel_estudios" required>
+                                </select>
+                            </div>
+                                <!--
+                                <select data-style="input-select-selectpicker form-control"
                                 class="selectpicker form-control" aria-label="Default select example"
                                 data-live-search="true" id="id_cat_nivel_estudios"
                                 data-none-results-text="Sin resultados">
                             </select>
-                            <!--
+                            
                             <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
                                     id="id_cat_nivel_estudios" required>
@@ -32,12 +38,18 @@
                         <div class="col-12">
                             <label class="text-input-form div-spacing text-input-rem">Carrera</label><label
                                 class="text-required">*</label>
-                            <select data-style="input-select-selectpicker form-control"
+                                <div class="custom-select-wrapper">
+                                <select class="form-control" aria-label="Default select example"
+                                    id="id_cat_carrera_hraes" required>
+                                </select>
+                            </div>
+                            <!--
+                                <select data-style="input-select-selectpicker form-control"
                                 class="selectpicker form-control" aria-label="Default select example"
                                 data-live-search="true" id="id_cat_carrera_hraes"
                                 data-none-results-text="Sin resultados">
                             </select>
-                            <!--
+                            
                             <div class="custom-select-wrapper">
                                 <select class="form-control" aria-label="Default select example"
                                     id="id_cat_carrera_hraes" required>

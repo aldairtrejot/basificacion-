@@ -58,7 +58,7 @@
 
 <script src="../../../.././assets/libs/sweetalert2/sweet-alert.init.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+
 <!--
     <script src="../../../../bootstrap/select/docs/docs/dist/js/bootstrap-select.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>

@@ -33,7 +33,7 @@ function buscarInfor(){
 
             $('#municipio1').empty();
             $('#municipio1').html(municipio);
-            $('#municipio1').selectpicker('refresh');
+            //$('#municipio1').selectpicker('refresh');
 
             $('#colonia1').empty();
             $('#colonia1').html(colonia);  
@@ -41,7 +41,7 @@ function buscarInfor(){
             $("#pais_f").val(pais);
 
             
-            $('#colonia1').selectpicker('refresh');
+            //$('#colonia1').selectpicker('refresh');
 
         }
     );
@@ -62,7 +62,7 @@ document.getElementById("municipio1").addEventListener("change", function() {
 
             $('#colonia1').empty();
             $('#colonia1').html(colonia);  
-            $('#colonia1').selectpicker('refresh'); 
+            //$('#colonia1').selectpicker('refresh'); 
         }
     );
   });

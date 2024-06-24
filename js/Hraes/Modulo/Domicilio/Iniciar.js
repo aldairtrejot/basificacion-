@@ -19,14 +19,14 @@ function domicilioDetalles(id_object){
             
             $('#municipio1').empty();
             $('#municipio1').html(municipio);
-            $('#municipio1').selectpicker('refresh');
+            //$('#municipio1').selectpicker('refresh');
 
             $('#colonia1').empty();
             $('#colonia1').html(colonia); 
-            $('#colonia1').selectpicker('refresh');
+            //$('#colonia1').selectpicker('refresh');
 
 
-            $('.selectpicker').selectpicker();
+            //$('.selectpicker').selectpicker();
             /*
             $('#colonia1').selectpicker('refresh');
             $('.selectpicker').selectpicker();

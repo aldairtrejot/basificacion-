@@ -48,8 +48,8 @@ function agregarEditarEspecialidad(id_object){
             $('#id_cat_especialidad_hraes').html(especialidad); 
             $('#cedula_esp').val(cedula_esp);
 
-            $('#id_cat_especialidad_hraes').selectpicker('refresh');
-            $('.selectpicker').selectpicker();
+           // $('#id_cat_especialidad_hraes').selectpicker('refresh');
+          //  $('.selectpicker').selectpicker();
 
             ocultarContenido('ocultar_cedula_esp');
             if (id_cat_especialidad_hraes_esp == 233){
