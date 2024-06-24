@@ -15,30 +15,42 @@ $id_rol = $_SESSION['id_rol'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIRH</title>
+    <link rel="stylesheet" href="../../../../fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../../../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../../assets/styles/menu.css">
     <link rel="stylesheet" href="../../../../assets/styles/NewMenu.css">
     <script src="../../../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="../../../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../../../js/Mensajes/mensajes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../../../js/Mensajes/mensajes.js"></script>
     <script src="../../../../js/Global/Curp/ValidarCurp.js"></script>
     <script src="../../../../js/Global/Mensajes/Mensajes.js"></script>
     <script src="../../../../js/Global/Seguridad/Confirmacion.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
-    <!-- Development -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="../../../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../../../js/Mensajes/mensajes.js"></script>
 
+   
+    <script src="../../../../extra/jquery-351.js"></script>
+    <script src="../../../../dist/js/sweetalert2.all.min.js"></script>
+
+    <link href="../../../../bootstrap/docs/docs/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../../../../bootstrap/select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <!--
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/npm i @popperjs/core"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
+-->
 
 </head>
 

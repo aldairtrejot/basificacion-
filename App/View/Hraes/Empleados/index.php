@@ -1,5 +1,8 @@
 <?php include '../../nav-menu.php' ?>
+
+<!--
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
+-->
 
 <style>
     .bootstrap-select:hover .dropdown-toggle {
@@ -86,8 +89,10 @@
 <script src="../../../../js/Hraes/Empleados/Busqueda.js"></script>
 <?php include '../../librerias.php' ?>
 <?php include 'AgregarEditar.php' ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
 
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+-->
 
 
 
