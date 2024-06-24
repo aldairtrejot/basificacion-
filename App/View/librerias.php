@@ -8,7 +8,7 @@
 
 
 
-<script src="../../../../bootstrap/select/docs/docs/dist/js/bootstrap-select.min.js"></script>
+
 <!--
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -33,7 +33,7 @@
 <script src="../../../.././assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
 <script src="../../../.././assets/extra-libs/sparkline/sparkline.js"></script>
 
-<script src="../../../.././dist/js/waves.js"></script>
+<script src="../../../.././dist/js/waves.js"></script> 
 
 <script src="../../../.././dist/js/sidebarmenu.js"></script>
 
@@ -58,8 +58,9 @@
 
 <script src="../../../.././assets/libs/sweetalert2/sweet-alert.init.js"></script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
 <!--
+    <script src="../../../../bootstrap/select/docs/docs/dist/js/bootstrap-select.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

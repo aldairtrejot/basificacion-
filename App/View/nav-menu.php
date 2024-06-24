@@ -31,8 +31,13 @@ $id_rol = $_SESSION['id_rol'];
     <script src="../../../../extra/jquery-351.js"></script>
     <script src="../../../../dist/js/sweetalert2.all.min.js"></script>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
+    <!--
+    <link href="../../../../bootstrap/select/docs/docs/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    
     <link href="../../../../bootstrap/docs/docs/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="../../../../bootstrap/select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+-->
     <!--
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
         integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
