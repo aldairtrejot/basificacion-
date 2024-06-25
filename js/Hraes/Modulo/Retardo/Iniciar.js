@@ -97,6 +97,7 @@ function guardarRetardo() {
     //if(validarAccion()){
     let fecha = $("#fecha").val();
     let hora = $("#hora").val();
+    console.log(hora);
     let cat_asistencia_bas = $("#cat_asistencia_bas").val();
     let cat_estatus_bas = $("#cat_estatus_bas").val();
     let observaciones_bas = $("#observaciones_bas").val();
@@ -112,6 +113,7 @@ function guardarRetardo() {
         id_tbl_empleados_hraes:id_tbl_empleados_hraes,
     },
         function (data) {
+            console.log(data);
             if (data == 'edit'){
                 mensajeExito('Asistencia modificada con éxito');
             } else if (data == 'add') {
@@ -127,7 +129,7 @@ function guardarRetardo() {
 }
 
 function eliminarRetardo(id_object) {//ELIMINAR USUARIO
-    if(validarAccion()){
+    //if(validarAccion()){
     Swal.fire({
         title: "¿Está seguro?",
         text: "¡No podrás revertir esto!",
@@ -153,7 +155,7 @@ function eliminarRetardo(id_object) {//ELIMINAR USUARIO
         );
     }
     });
-}
+//}
 }
 
 function concatHora(hora,minuto){

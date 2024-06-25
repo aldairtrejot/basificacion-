@@ -42,8 +42,8 @@ function agregarEditarJefe(id_object){
 
             $('#id_cat_lengua_idioma').empty();
             $('#id_cat_lengua_idioma').html(catalogoLengua); 
-            $('#id_cat_lengua_idioma').selectpicker('refresh');
-            $('.selectpicker').selectpicker();
+            //$('#id_cat_lengua_idioma').selectpicker('refresh');
+            //$('.selectpicker').selectpicker();
 
         }
     );

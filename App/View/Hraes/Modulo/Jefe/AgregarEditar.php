@@ -13,11 +13,18 @@
                         <div class="col-12">
                             <label class="text-input-form div-spacing text-input-rem">Seleccione el idioma o lengua</label><label
                                 class="text-required">*</label>
+                                <div class="custom-select-wrapper">
+                                <select class="form-control" aria-label="Default select example"
+                                    id="id_cat_lengua_idioma" required>
+                                </select>
+                            </div>
+                            <!--
                             <select data-style="input-select-selectpicker form-control"
                                 class="selectpicker form-control" aria-label="Default select example"
                                 data-live-search="true" id="id_cat_lengua_idioma"
                                 data-none-results-text="Sin resultados">
                             </select>
+-->
                         </div>
                     </div>
                 </div>

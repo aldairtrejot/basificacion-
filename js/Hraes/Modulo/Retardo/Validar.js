@@ -19,7 +19,7 @@ function validarDependiente(){
                 }
          } 
     } else { ///MODIFICAR
-        if(validarAccion()){
+       if(validarAccion()){
         if(validarData(fecha_retardo,'Fecha') &&
             validarData(hora_entrada,'Hora') &&
             validarData(cat_asistencia_bas,'Seleccione el tipo')){

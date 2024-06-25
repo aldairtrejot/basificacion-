@@ -11,6 +11,7 @@ function validarDomicilio(){
        validarData(colonia1,'Colonia') &&
        validarData(calle1,'Calle') &&
        validarData(num_exterior1,'Núm. exterior') &&
+       validarData(codigo_postal2,'Código postal fiscal') &&
        caracteresCount('Código postal fiscal',6,codigo_postal2)){
             guardarDomicilio();
     } 
