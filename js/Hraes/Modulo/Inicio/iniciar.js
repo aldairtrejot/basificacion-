@@ -38,6 +38,7 @@ function iniciarEscolaridad(){
 }
 
 function iniciarMediosContacto(){
+    mensajetextLar('El usuario debe verificar que todos los campos estén completos, incluyendo el domiclio (código postal fiscal) y la forma de pago (cuenta clabe).');
     buscarNumTelefonico();
     buscarCorreo();
     buscarDependiente();
@@ -64,7 +65,7 @@ function iniciarProgramas(){
 
 function iniciarIncidencias(){
     buscarRetardo();
-    buscarJuguete();
+    //buscarJuguete();
     //buscarPercepcion();
 }
 

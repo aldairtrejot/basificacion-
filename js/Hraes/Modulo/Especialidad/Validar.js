@@ -5,13 +5,15 @@ function validarEspecialidad(){
 
     if (id_cat_especialidad_hraes == 233){
         if (validarData(id_cat_especialidad_hraes,'Especialidad') &&
-        validarData(otro_especialidad,'Otra especialidad') &&
+            validarData(otro_especialidad,'Otra especialidad') &&
+            validarData(cedula_esp,'Cédula profesional') &&
           caracteresCount('Cédula profesional',20,cedula_esp)
     ){
         guardarCedula();
     }
     } else {
         if (validarData(id_cat_especialidad_hraes,'Especialidad') &&
+        validarData(cedula_esp,'Cédula profesional') &&
             caracteresCount('Cédula profesional',20,cedula_esp)
         ){
             guardarCedula();

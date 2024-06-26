@@ -20,6 +20,7 @@ if ($id_tbl_empleados_hraes == null) {
     <input type="hidden" id="id_tbl_empleados_hraes" value="<?php echo $id_tbl_empleados_hraes ?>" />
     <div class="card border-light">
         <div class="card-body">
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-auto">
@@ -28,8 +29,14 @@ if ($id_tbl_empleados_hraes == null) {
                     <div class="col padding-left-0">
                         <h3>Datos complementarios</h3>
                     </div>
+                    <div class="col-8">
+                        <div class="alert alert-warning fade show py-1" role="alert">
+                        <i class="fas fa-exclamation-triangle"></i> <?php echo $nombre ?> es importante ingresar la información de manera correcta.
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="div-spacing"></div>
 
             <div class="row">
@@ -84,14 +91,14 @@ if ($id_tbl_empleados_hraes == null) {
                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-escolaridad"
                                 onclick="iniciarEscolaridad();" role="tab" aria-controls="nav-contact"
                                 aria-selected="false"><i class="fa fa-graduation-cap"></i> Escolaridad</a>
-                            
-                            
+
+                            <!--
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-movimientos"
                                 onclick="iniciarMovimiento();" role="tab" aria-controls="nav-contact"
                                 aria-selected="false"><i class="fa fa-random"></i> Movimientos</a>
 
 
-                            <!--
+                            
                                                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-programas"
                                 onclick="iniciarProgramas();" role="tab" aria-controls="nav-contact"
                                 aria-selected="false"><i class="fa fa-cubes"></i> Programas</a>

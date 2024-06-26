@@ -113,11 +113,11 @@ function guardarRetardo() {
         id_tbl_empleados_hraes:id_tbl_empleados_hraes,
     },
         function (data) {
-            console.log(data);
             if (data == 'edit'){
                 mensajeExito('Asistencia modificada con éxito');
             } else if (data == 'add') {
-                mensajeExito('Asistencia agregada con éxito');  
+                mensajeExito('Asistencia agregada con éxito'); 
+                mensajetextLar("Usuario valida que el domicilio esté correctamente ingresado, que se hayan añadido el nivel de estudios, la forma de pago y los medios de contacto de forma correcta."); 
             } else {
                 mensajeError(data);
             }
@@ -127,6 +127,15 @@ function guardarRetardo() {
     );
 //}
 }
+
+function mensajetextLar(text){
+    Swal.fire({
+        title: "USUARIO",
+        text: text,
+        icon: "warning"
+      });
+}
+
 
 function eliminarRetardo(id_object) {//ELIMINAR USUARIO
     //if(validarAccion()){

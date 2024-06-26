@@ -24,7 +24,12 @@ function validar(){
         campoInvalido(validarRFC(rfc),'Rfc') &&
         caracteresCount('Núm. de seguro social',12,nss)
     ){
-        validarUnique(rfc,curp,num_empleado,id_object);
+        if (nss.length == 11){
+            validarUnique(rfc,curp,num_empleado,id_object);
+        } else {
+            mensajeError('El Núm. de seguro social debe tener 11 caracteres');
+        }
+        
     }
 }
 
