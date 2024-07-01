@@ -97,7 +97,6 @@ function guardarRetardo() {
     //if(validarAccion()){
     let fecha = $("#fecha").val();
     let hora = $("#hora").val();
-    console.log(hora);
     let cat_asistencia_bas = $("#cat_asistencia_bas").val();
     let cat_estatus_bas = $("#cat_estatus_bas").val();
     let observaciones_bas = $("#observaciones_bas").val();

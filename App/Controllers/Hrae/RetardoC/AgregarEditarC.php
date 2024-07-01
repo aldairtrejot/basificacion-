@@ -9,6 +9,9 @@ $cat_estatus_bas = $_POST['cat_estatus_bas'];
 $observaciones = $_POST['observaciones'];
 $id_tbl_empleados_hraes = $_POST['id_tbl_empleados_hraes'];
 
+$hora = $_POST['hora'];
+$fecha = $_POST['fecha'];
+
 $condicion = [
     'id_ctrl_asistencia_bas' => $_POST['id_object']
 ];
@@ -37,7 +40,23 @@ $var = [
 ];
 
 if ($_POST['id_object'] != null) { //Modificar
-    if ($modelRetardoM ->editarByArray($connectionDBsPro, $datos, $condicion)) {
+    $idEmp = $_POST['id_tbl_empleados_hraes'];
+    //if ($modelRetardoM ->editarByArray($connectionDBsPro, $datos, $condicion)) {
+        if ($cat_asistencia_bas == 2){
+            $update = pg_query("UPDATE ctrl_asistencia_bas SET
+                            fecha = $fecha,
+                            id_cat_asistencia_bas = $cat_asistencia_bas,
+                            id_cat_estatus_bas = $cat_estatus_bas,
+                            hora = '$hora',
+                            observaciones = '$observaciones'
+                            WHERE id_tbl_empleados_hraes = $idEmp;");
+        } else 
+        {
+            $update = pg_query("UPDATE ctrl_asistencia_bas SET
+            fecha = '$fecha'
+            WHERE id_tbl_empleados_hraes = $id_tbl_empleados_hraes;");
+        }
+      
         $dataBitacora = [
             'nombre_tabla' => 'ctrl_asistencia_bas',
             'accion' => 'MODIFICAR',
@@ -47,7 +66,7 @@ if ($_POST['id_object'] != null) { //Modificar
         ];
         $bitacoraM->agregarByArray($connectionDBsPro,$dataBitacora,'bitacora_hraes');
         echo 'edit';
-    }
+    //}
 
 }  else { //Agregar
     if ($cat_asistencia_bas == 2){
