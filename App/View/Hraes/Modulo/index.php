@@ -11,8 +11,8 @@ if ($id_tbl_empleados_hraes == null) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
     integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
     crossorigin="anonymous"></script>
-
 -->
+<link href="../../../../bootstrap/select/docs/docs/dist/css/bootstrap-select.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="../../../../assets/styles/nav.css">
 <div class="container-fluid bg-image-module nav-padding">
