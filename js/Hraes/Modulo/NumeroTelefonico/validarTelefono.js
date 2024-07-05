@@ -10,7 +10,17 @@ function validarTelefono(){
         caracteresCount('Número telefónico',10,movil) &&
         caracteresCount('Teléfono fijo',10,telefono)
     ){
-        validarEstatusTelefono(id_object, id_cat_estatus);
+
+        if(movil.length == 10){
+            if (telefono.length == 10 || telefono.length == 0){
+                validarEstatusTelefono(id_object, id_cat_estatus);
+            } else {
+                mensajeError('Teléfono fijo debe tener 10 caracteres');
+            }
+        } else {
+            mensajeError('Número telefónico debe tener 10 caracteres');
+        }
+        
     }
 }
 
