@@ -53,8 +53,8 @@ function agregarEditarMovimiento(id_object){
             
             $('#id_tbl_control_plazas_hraes').empty();
             $('#id_tbl_control_plazas_hraes').html(plaza); 
-            $('#id_tbl_control_plazas_hraes').selectpicker('refresh');
-            $('.selectpicker').selectpicker();
+            //$('#id_tbl_control_plazas_hraes').selectpicker('refresh');
+            //$('.selectpicker').selectpicker();
 
             $('#id_tbl_movimientos').empty();
             $('#id_tbl_movimientos').html(especifico); 

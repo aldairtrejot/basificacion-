@@ -45,10 +45,17 @@
                             <div class="col-4">
                                 <label class="text-input-form div-spacing text-input-rem">N&uacutem. Plaza</label><label
                                     class="text-required">*</label>
+                                <div class="custom-select-wrapper">
+                                    <select class="form-control" aria-label="Default select example"
+                                        id="id_tbl_control_plazas_hraes" required>
+                                    </select>
+                                </div>
+                                <!--
                                 <select data-style="input-select-selectpicker form-control" class="selectpicker"
                                     aria-label="Default select example" data-live-search="true"
                                     id="id_tbl_control_plazas_hraes" data-none-results-text="Sin resultados">
                                 </select>
+-->
                             </div>
 
                             <div class="col-4">
