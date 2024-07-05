@@ -19,7 +19,7 @@ function validar(){
         validarData(num_plaza,'Número de plaza') &&
         validarData(id_tbl_zonas_pago,'Zona pagadora') &&
         validarData(fecha_ingreso_inst,'Fecha de ingreso') &&
-        caracteresCount('Número de plaza',8,num_plaza)
+        caracteresCount('Número de plaza',30,num_plaza)
     ){
         if (id_object.length === 0){
             agregarEditarByDb();

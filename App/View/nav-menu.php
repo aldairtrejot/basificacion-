@@ -125,8 +125,9 @@ $id_rol = $_SESSION['id_rol'];
                             <?php if ($id_rol == 1) {?>
                                 <li><a class="dropdown-item" href="../../Hraes/CentroTrabajo/index.php">Centro de
                                         trabajo</a></li>
+                                        <?php } ?>
                                 <li><a class="dropdown-item" href="../../Hraes/Plazas/index.php">Plazas</a></li>
-                                <?php } ?>
+                                
                                 <li><a class="dropdown-item" href="../../Hraes/Empleados/index.php">Empleados</a></li>
 
                             </ul>

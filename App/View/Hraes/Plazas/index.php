@@ -18,7 +18,7 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
                         <div class="vertical-line"></div>
                     </div>
                     <div class="col padding-left-0">
-                        <h4>Hospital Regional de Alta Especialidad</h4>
+                        <h4>Basificaci&oacuten de entidades</h4>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i>
                     Cancelar</button>
-                <a href="../CentroTrabajo/index.php" type="button" class="btn btn-success save-botton-modal"><i
+                <a href="#" type="button" class="btn btn-success save-botton-modal"><i
                         class="fa fa-arrow-circle-right"></i> Ir</a>
             </div>
         </div>

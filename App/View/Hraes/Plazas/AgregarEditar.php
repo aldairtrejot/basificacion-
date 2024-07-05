@@ -27,23 +27,29 @@
                         <div class="col-4">
                             <label for="campo" class="form-label input-text-form">Tipo de plaza</label><label
                                 class="text-required">*</label>
-                            <select class="form-control div-spacing custom-select" aria-label="Default select example"
-                                id="id_cat_plazas" required>
-                            </select>
+                            <fieldset disabled>
+                                <select class="form-control div-spacing custom-select"
+                                    aria-label="Default select example" id="id_cat_plazas" required>
+                                </select>
+                            </fieldset>
                         </div>
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Tipo de
                                 contrataci&oacuten</label><label class="text-required">*</label>
-                            <select class="form-control div-spacing  custom-select" aria-label="Default select example"
-                                id="id_cat_tipo_contratacion_hraes" required>
-                            </select>
+                            <fieldset disabled>
+                                <select class="form-control div-spacing  custom-select"
+                                    aria-label="Default select example" id="id_cat_tipo_contratacion_hraes" required>
+                                </select>
+                            </fieldset>
                         </div>
                         <div class="col-5">
                             <label for="campo" class="form-label input-text-form">Unidad responsable</label><label
                                 class="text-required">*</label>
-                            <select class="form-control div-spacing  custom-select" aria-label="Default select example"
-                                id="id_cat_unidad_responsable" required>
-                            </select>
+                            <fieldset disabled>
+                                <select class="form-control div-spacing  custom-select"
+                                    aria-label="Default select example" id="id_cat_unidad_responsable" required>
+                                </select>
+                            </fieldset>
                         </div>
                     </div>
 
@@ -59,16 +65,20 @@
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Zonas tabuladores</label><label
                                 class="text-required">*</label>
-                            <select class="form-control div-spacing custom-select" aria-label="Default select example"
-                                id="id_cat_zonas_tabuladores_hraes" required>
-                            </select>
+                            <fieldset disabled>
+                                <select class="form-control div-spacing custom-select"
+                                    aria-label="Default select example" id="id_cat_zonas_tabuladores_hraes" required>
+                                </select>
+                            </fieldset>
                         </div>
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Zona pagadora</label><label
                                 class="text-required">*</label>
-                            <select class="form-control div-spacing custom-select" aria-label="Default select example"
-                                id="id_tbl_zonas_pago" required>
-                            </select>
+                            <fieldset disabled>
+                                <select class="form-control div-spacing custom-select"
+                                    aria-label="Default select example" id="id_tbl_zonas_pago" required>
+                                </select>
+                            </fieldset>
                         </div>
                         <div class="col-2">
                             <label for="campo" class="form-label input-text-form">Niveles</label><label
@@ -84,26 +94,32 @@
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">N&uacutemero de plaza</label><label
                                 class="text-required">*</label>
-                            <input minlength="7" type="number" class="form-control custom-input" id="num_plaza"
-                                placeholder="Número de plaza" oninput="validarNumero(this)">
+                                <input type="text" class="form-control custom-input" id="num_plaza"
+                                    placeholder="Número de plaza">
                             <div class="line"></div>
                         </div>
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Fecha de ingreso OPD</label><label
                                 class="text-required">*</label>
-                            <input type="date" class="form-control custom-input" id="fecha_ingreso_inst">
+                            <fieldset disabled>
+                                <input type="date" class="form-control custom-input" id="fecha_ingreso_inst">
+                            </fieldset>
                             <div class="line"></div>
                         </div>
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Fecha de t&eacutermino</label><label
                                 class="text-required">*</label>
-                            <input type="date" class="form-control custom-input" id="fecha_termino_movimiento">
+                            <fieldset disabled>
+                                <input type="date" class="form-control custom-input" id="fecha_termino_movimiento">
+                            </fieldset>
                             <div class="line"></div>
                         </div>
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Fecha de
                                 modificaci&oacuten</label><label class="text-required">*</label>
-                            <input type="date" class="form-control custom-input" id="fecha_modificacion">
+                            <fieldset disabled>
+                                <input type="date" class="form-control custom-input" id="fecha_modificacion">
+                            </fieldset>
                             <div class="line"></div>
                         </div>
                     </div>
@@ -113,20 +129,25 @@
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Fecha de movimiento</label><label
                                 class="text-required">*</label>
-                            <input type="date" class="form-control custom-input" id="fecha_inicio_movimiento">
+                            <fieldset disabled>
+                                <input type="date" class="form-control custom-input" id="fecha_inicio_movimiento">
+                            </fieldset>
                             <div class="line"></div>
                         </div>
                         <div class="col-3">
-                            <fieldset disabled id="checkbox_disabled" data-toggle="tooltip" data-placement="top" title="Una plaza plantilla es aquella cuyo número aún no está definido.">
-                                <label for="campo" class="form-label input-text-form">¿Es plantilla?</label><label
-                                    class="text-required">*</label>
-                                <div class="form-check div-spacing">
-                                    <input class="form-check-input" type="checkbox" value="0"
-                                        id="id_cat_situacion_plaza_hraes">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Si
-                                    </label>
-                                </div>
+                            <fieldset disabled>
+                                <fieldset disabled id="checkbox_disabled" data-toggle="tooltip" data-placement="top"
+                                    title="Una plaza plantilla es aquella cuyo número aún no está definido.">
+                                    <label for="campo" class="form-label input-text-form">¿Es plantilla?</label><label
+                                        class="text-required">*</label>
+                                    <div class="form-check div-spacing">
+                                        <input class="form-check-input" type="checkbox" value="0"
+                                            id="id_cat_situacion_plaza_hraes">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Si
+                                        </label>
+                                    </div>
+                                </fieldset>
                             </fieldset>
                         </div>
                     </div>

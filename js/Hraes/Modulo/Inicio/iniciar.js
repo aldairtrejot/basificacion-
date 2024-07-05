@@ -6,6 +6,8 @@ function buscarInfoEmpleado(id_tbl_empleados_hraes){
 
     let puestoResult = document.getElementById("puestoResult");
     let nivelResult = document.getElementById("nivelResult");
+
+    let numPlazaResult = document.getElementById("numPlazaResult");
     
     $.post('../../../../App/Controllers/Hrae/EmpleadoC/InformacionC.php', {
         id_tbl_empleados_hraes:id_tbl_empleados_hraes
@@ -17,6 +19,8 @@ function buscarInfoEmpleado(id_tbl_empleados_hraes){
             let rfc = jsonData.rfc;
             let noEmpleado = jsonData.noEmpleado;
 
+            let plaza = jsonData.plaza;
+
             let nivel = jsonData.nivel;
             let puesto = jsonData.puesto;
 
@@ -27,6 +31,8 @@ function buscarInfoEmpleado(id_tbl_empleados_hraes){
 
             puestoResult.textContent = puesto;
             nivelResult.textContent = nivel;
+
+            numPlazaResult.textContent = plaza;
         }
     );
 }

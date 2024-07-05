@@ -76,6 +76,14 @@ if ($id_tbl_empleados_hraes == null) {
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-4">
+                    <h6 class="text-input-form-bold-label  div-spacing">Núm. plaza: <label class="text-result-normal"
+                            id="numPlazaResult"></label>
+                    </h6>
+                </div>
+            </div>
+
             <div class="div-spacing"></div>
             <div class="row div-spacing">
                 <div class="col-12">

@@ -16,6 +16,7 @@ $noEmpleado = $empleado['num_empleado'];
 
 $nivel = ' - ';
 $puesto = ' - ';
+$plaza = ' - ';
 
 $idPlazaEmpleado = $row->returnArrayById($modelMovimientosM->countEmpleadoPlaza($id_object));
 if ($idPlazaEmpleado[0] != 0){ ///tiene info
@@ -24,6 +25,7 @@ if ($idPlazaEmpleado[0] != 0){ ///tiene info
         $plazasX = $row->returnArrayById($modelMovimientosM->returnNivelesPuesto($ultimoMovimiento[1]));
         $puesto = $plazasX[0];
         $nivel = $plazasX[1];
+        $plaza = $plazasX[2];
     }
 } 
 
@@ -33,7 +35,8 @@ $var = [
     'rfc' => $rfc,
     'noEmpleado' => $noEmpleado,
     'nivel' => $nivel,
-    'puesto' => $puesto
+    'puesto' => $puesto,
+    'plaza' => $plaza
 ];
 
 echo json_encode($var);
