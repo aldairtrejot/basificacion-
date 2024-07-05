@@ -5,7 +5,6 @@ if ($id_tbl_empleados_hraes == null) {
 }
 ?>
 
-<link href="../../../../bootstrap/select/docs/docs/dist/css/bootstrap-select.min.css" rel="stylesheet">
 
 <?php include '../../nav-menu.php' ?>
 
@@ -171,7 +170,6 @@ if ($id_tbl_empleados_hraes == null) {
 </div>
 <br>
 
-<script src="../../../../bootstrap/select/docs/docs/dist/js/bootstrap-select.min.js"></script>
 
 <?php include 'librerias.php' ?>
 <script src="../../../../assets/js/bootstrap.js"></script>
