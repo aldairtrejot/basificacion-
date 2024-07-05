@@ -100,12 +100,12 @@ if ($id_tbl_empleados_hraes == null) {
                                 onclick="iniciarEscolaridad();" role="tab" aria-controls="nav-contact"
                                 aria-selected="false"><i class="fa fa-graduation-cap"></i> Escolaridad</a>
 
-                            <!--
+                            
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-movimientos"
                                 onclick="iniciarMovimiento();" role="tab" aria-controls="nav-contact"
                                 aria-selected="false"><i class="fa fa-random"></i> Movimientos</a>
 
-
+<!--
                             
                                                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-programas"
                                 onclick="iniciarProgramas();" role="tab" aria-controls="nav-contact"
