@@ -169,6 +169,8 @@ if ($id_tbl_empleados_hraes == null) {
 </div>
 <br>
 
+<script src="../../../../bootstrap/select/docs/docs/dist/js/bootstrap-select.min.js"></script>
+
 <?php include 'librerias.php' ?>
 <script src="../../../../assets/js/bootstrap.js"></script>
 <script>
