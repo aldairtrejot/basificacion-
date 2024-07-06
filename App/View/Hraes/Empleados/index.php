@@ -6,11 +6,11 @@
 
 <style>
     .bootstrap-select:hover .dropdown-toggle {
-      background-color: #f8f9fa; /* Cambia aquí el color cuando el cursor está encima */
-      /*border-color: red; /* Cambia aquí el color del borde cuando el cursor está encima */
+        background-color: #f8f9fa;
+        /* Cambia aquí el color cuando el cursor está encima */
+        /*border-color: red; /* Cambia aquí el color del borde cuando el cursor está encima */
     }
-
-  </style>
+</style>
 
 <div class="container-fluid bg-image nav-padding">
     <br>
@@ -46,10 +46,29 @@
             <div class="row div-spacing">
                 <div class="col-9">
                     <div class="form-inline">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i
+                                    class="fa fa-plus icono-pequeno-tabla"></i>
+                                <span class="hide-menu text-button-add">&nbsp;Ver más</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <button onclick="agregarEditarDetalles(null)" class="dropdown-item btn btn-light"><i
+                                        class="fa fa-plus icon-edit-table"></i>
+                                    Agregar empleado</button>
+                                <button onclick="getPowerBi()" class="dropdown-item btn btn-light"><i
+                                        class="fa fa-line-chart icon-edit-table"></i>
+                                        Power BI Refresh</button>
+                            </div>
+                        </div>
+
+                        <!--
+
                         <button onclick="agregarEditarDetalles(null)" class="btn btn-light"><i
                                 class="fa fa-plus icon-size-add"></i>
                             <span class="hide-menu text-button-add">&nbsp;Agregar empleado</span>
                         </button>
+-->
                     </div>
                 </div>
             </div>

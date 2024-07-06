@@ -27,11 +27,11 @@
                         <div class="col-4">
                             <label for="campo" class="form-label input-text-form">Tipo de plaza</label><label
                                 class="text-required">*</label>
-                            <fieldset disabled>
+                            
                                 <select class="form-control div-spacing custom-select"
                                     aria-label="Default select example" id="id_cat_plazas" required>
                                 </select>
-                            </fieldset>
+                            
                         </div>
                         <div class="col-3">
                             <label for="campo" class="form-label input-text-form">Tipo de

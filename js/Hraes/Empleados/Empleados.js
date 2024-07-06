@@ -357,3 +357,52 @@ var selectElement = document.getElementById('cat_asistencia_bas');
         let x = document.getElementById(text);
         x.style.display = "block";
     }
+
+
+
+
+
+
+    function getPowerBi() {//ELIMINAR USUARIO
+        Swal.fire({
+            title: "Power BI Refresh",
+            text: "Power BI Refresh se utiliza para actualizar la información en el tablero de Power BI. Este proceso puede tomar unos minutos.",
+            icon: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, continuar",
+            cancelButtonText: "Cancelar"
+          }).then((result) => {
+            if (result.isConfirmed) { 
+                //text:"Por favor, no cancele el proceso, su acción está en curso.",  
+                Swal.fire({
+                    title: "Power BI Refresh",
+                    text: "Por favor, no cancele el proceso, su acción está en curso.",
+                    icon: "info",
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                  });      
+            $.post("../../../../App/Controllers/Hrae/EmpleadoC/PowerBi.php", {
+                },
+                function (data) {
+                    //console.log(data);
+                    let jsonData = JSON.parse(data); 
+                    let bool = jsonData.bool;
+
+                    if (bool){
+                       // mensajeExito('')
+                        Swal.fire({
+                            text: "La actualización de Power BI se realizó correctamente. Puedes consultar tu información ahora",
+                            icon: "success"
+                          });
+                    } else {
+                        mensajeError(mensajeSalida);
+                    }
+                }
+            );
+        }
+        });
+    }
