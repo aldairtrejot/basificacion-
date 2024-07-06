@@ -10,14 +10,26 @@ $queryAllstatus = $model->fomopeQueryAll($tableName);
 $updateStatus = $model->updateFomope($tableName);
 
 $bool = false;
+$message = 'ok';
 
-if ($truncateStatus && $queryAllstatus  && $updateStatus){
-    $bool = true;
+if ($truncateStatus){
+    if($queryAllstatus){
+        if ($updateStatus){
+            $bool = true;
+        } else {
+            $message = 'Error en update';
+        }
+    } else {
+        $message = 'Error en insert';
+    }
+} else {
+    $message = 'Error en truncate';
 }
 
 
 $var = [
     'bool' => $bool,
+    'message' => $message,
 ];
 
 
