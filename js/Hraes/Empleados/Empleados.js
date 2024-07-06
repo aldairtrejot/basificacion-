@@ -388,7 +388,7 @@ var selectElement = document.getElementById('cat_asistencia_bas');
             $.post("../../../../App/Controllers/Hrae/EmpleadoC/PowerBi.php", {
                 },
                 function (data) {
-                    //console.log(data);
+                    console.log(data);
                     let jsonData = JSON.parse(data); 
                     let bool = jsonData.bool;
 
