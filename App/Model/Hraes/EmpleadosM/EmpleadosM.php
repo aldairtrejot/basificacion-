@@ -156,7 +156,12 @@ class modelEmpleadosHraes
                             UPDATE $name
                             SET observaciones = 'NO CUENTA CON CUENTA CLABE'
                             where LENGTH(CLABE) is null 
-                            AND  trim(observaciones) not in ('NO REGISTRADO EN SISTEMA');");
+                            AND  trim(observaciones) not in ('NO REGISTRADO EN SISTEMA');
+                            
+                            UPDATE $name
+                            SET observaciones = 'PROCESO DE VALIDACION DE DATOS'
+                            where trim(observaciones) = '';
+                            ");
         return $query;
     }
 
