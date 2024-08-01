@@ -20,7 +20,8 @@ class modelPlazasHraes
                             cat_tipo_plazas.tipo_plaza,
                             CONCAT(cat_tipo_contratacion_hraes.tipo_contratacion, ' ',
                                 cat_subtipo_contratacion_hraes.subtipo),
-                            cat_unidad_responsable.nombre
+                            cat_unidad_responsable.nombre,
+                            cat_puesto_hraes.nombre_posicion
                     FROM tbl_control_plazas_hraes
                     INNER JOIN cat_tipo_plazas
                         ON tbl_control_plazas_hraes.id_cat_tipo_plazas = cat_tipo_plazas.id_cat_tipo_plazas
@@ -33,6 +34,9 @@ class modelPlazasHraes
                     INNER JOIN cat_tipo_contratacion_hraes
                         ON cat_tipo_subtipo_contratacion_hraes.id_cat_tipo_contratacion_hraes =
                             cat_tipo_contratacion_hraes.id_cat_tipo_contratacion_hraes
+                    INNER JOIN cat_puesto_hraes
+                        ON tbl_control_plazas_hraes.id_cat_puesto_hraes =
+                            cat_puesto_hraes.id_cat_puesto_hraes
                     INNER JOIN cat_subtipo_contratacion_hraes
                         ON 	cat_tipo_subtipo_contratacion_hraes.id_cat_subtipo_contratacion_hraes =
                             cat_subtipo_contratacion_hraes.id_cat_subtipo_contratacion_hraes " . $result;
@@ -49,6 +53,8 @@ class modelPlazasHraes
                                 cat_subtipo_contratacion_hraes.subtipo))))
                             LIKE '%$busqueda%'
                     OR TRIM(UPPER(UNACCENT(cat_unidad_responsable.nombre)))
+                            LIKE '%$busqueda%'
+                    OR TRIM(UPPER(UNACCENT(cat_puesto_hraes.nombre_posicion)))
                             LIKE '%$busqueda%')
                     ORDER BY id_tbl_control_plazas_hraes DESC
                     LIMIT 6 OFFSET $paginator;";
@@ -64,7 +70,8 @@ class modelPlazasHraes
                             cat_tipo_plazas.tipo_plaza,
                             CONCAT(cat_tipo_contratacion_hraes.tipo_contratacion, ' ',
                                 cat_subtipo_contratacion_hraes.subtipo),
-                            cat_unidad_responsable.nombre
+                            cat_unidad_responsable.nombre,
+                            cat_puesto_hraes.nombre_posicion
                     FROM tbl_control_plazas_hraes
                     INNER JOIN cat_tipo_plazas
                         ON tbl_control_plazas_hraes.id_cat_tipo_plazas = cat_tipo_plazas.id_cat_tipo_plazas
@@ -77,6 +84,9 @@ class modelPlazasHraes
                     INNER JOIN cat_tipo_contratacion_hraes
                         ON cat_tipo_subtipo_contratacion_hraes.id_cat_tipo_contratacion_hraes =
                             cat_tipo_contratacion_hraes.id_cat_tipo_contratacion_hraes
+                    INNER JOIN cat_puesto_hraes
+                        ON tbl_control_plazas_hraes.id_cat_puesto_hraes =
+                            cat_puesto_hraes.id_cat_puesto_hraes
                     INNER JOIN cat_subtipo_contratacion_hraes
                         ON 	cat_tipo_subtipo_contratacion_hraes.id_cat_subtipo_contratacion_hraes =
                             cat_subtipo_contratacion_hraes.id_cat_subtipo_contratacion_hraes " . $condition;

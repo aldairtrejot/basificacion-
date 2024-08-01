@@ -2,6 +2,16 @@
 
 class modelCentroTrabajoHraes
 {
+
+    public function allCountPlazas($idClue)
+    {
+        $isQuery = pg_query("SELECT 
+                                    COUNT (id_tbl_control_plazas_hraes)
+                                FROM tbl_control_plazas_hraes
+                                WHERE id_tbl_centro_trabajo_hraes = $idClue;");
+        return $isQuery;
+    }
+
     public function listarByAll($paginator)
     {
         $listado = "SELECT tbl_centro_trabajo_hraes.id_tbl_centro_trabajo_hraes,

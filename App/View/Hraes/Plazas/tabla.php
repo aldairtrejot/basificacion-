@@ -29,6 +29,7 @@ $data =
             <th>Acciones</th>
             <th>N&uacutem. de plaza</th>
             <th>Tipo de plaza</th>
+            <th>Puesto</th>
             <th>Tipo de contrataci&oacuten</th>
             <th>Unidad responsable</th>
         </tr>
@@ -57,6 +58,9 @@ if (pg_num_rows($result) > 0) {
                             </td>
                             <td>
                                 ' . $row[2] . '
+                            </td>
+                            <td>
+                                ' . $row[5] . '
                             </td>
                             <td>
                                 ' . $row[3] . '
