@@ -298,3 +298,87 @@ function concatNombre(nombre, primerApellido, segundoApellido){
 function validarNumero(input) {
     input.value = input.value.replace(/[^\d]/g, '');
   }
+
+
+
+
+  function mostrarisGrap(){
+    $("#is_modal_graphics").modal("show");
+}
+
+function ocultarModalDetallesisGrap(){
+    $("#is_modal_graphics").modal("hide");
+}
+
+
+function activityGraphics(){
+        $.post("../../../../App/Controllers/Hrae/PlazasC/GraficoC.php", {
+            id_tbl_centro_trabajo_hraes: id_tbl_centro_trabajo_hraes,
+        },
+                function (data) {
+                let isJson = JSON.parse(data);
+
+                var ctx = document.getElementById('myBarChart').getContext('2d');
+                var myBarChart = new Chart(ctx, {
+                type: 'bar', // Tipo de gráfico: 'bar' para gráfico de barras
+                data: {
+                    labels: [
+                        'MEDICO ESPECIALISTA HOSPITAL', 'MEDICO GENERAL', 'ESTOMATOLOGO', 'ENFERMERA ESPECIALISTA',
+                        'ENFERMERA DE ATENCION CLINICA', 'AUXILIAR DE ENFERMERIA', 'INHALOTERAPEUTA', 'QUIMICO CLINICO',
+                        'PSICOLOGO', 'NUTRICIONISTA DIETISTA', 'TECNICO LABORATORISTA', 'TECNICO RADIOLOGO',
+                        'TERAPISTA FISICO', 'TERAPISTA OCUPACIONAL', 'COCINERO', 'TRABAJADORA SOCIAL'
+                    ],// Etiquetas de las barras
+                    datasets: [{
+                        label: 'Distribución por puesto',
+                        data: [isJson.is_1, isJson.is_2, isJson.is_3, isJson.is_4, isJson.is_5, isJson.is_6, 
+                            isJson.is_7, isJson.is_8, isJson.is_9, isJson.is_10, isJson.is_11, isJson.is_12, isJson.is_13, 
+                            isJson.is_14, isJson.is_15, isJson.is_16], // Datos para cada barra
+                        backgroundColor: [ // Colores para cada barra
+                            '#4CAF50', '#8BC34A', '#C5E1A5', '#DCEDC8',
+                            '#9E9E9E', '#BDBDBD', '#E0E0E0', '#F5F5F5',
+                            '#43A047', '#66BB6A', '#81C784', '#A5D6A7',
+                            '#607D8B', '#78909C', '#90A4AE', '#B0BEC5'
+                        ],
+                        borderColor: '#fff', // Color del borde de las barras
+                        borderWidth: 1 // Ancho del borde
+                    }]
+                },
+                options: {
+                    responsive: true, // Hace que el gráfico sea responsive
+                    plugins: {
+                        legend: {
+                            position: 'top', // Posición de la leyenda
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw; // Personaliza el texto del tooltip
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true, // El eje X comienza en 0
+                            title: {
+                                display: true,
+                                text: 'Puestos' // Título del eje X
+                            }
+                        },
+                        y: {
+                            beginAtZero: true, // El eje Y comienza en 0
+                            title: {
+                                display: true,
+                                text: 'Total de plazas' // Título del eje Y
+                            }
+                        }
+                    }
+                }
+            });
+
+            mostrarisGrap();
+            }
+        );
+
+        
+}

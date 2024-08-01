@@ -67,6 +67,22 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
             </div>
 
             <?php if ($id_tbl_centro_trabajo_hraes != null) { ?>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-plus icono-pequeno-tabla"></i>
+                        <span class="hide-menu text-button-add">&nbsp;Ver más</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button onclick="agregarEditarDetalles(null)" class="dropdown-item btn btn-light"><i
+                                class="fa fa-plus icon-edit-table"></i>
+                            Agregar plaza</button>
+                        <button onclick="activityGraphics()" class="dropdown-item btn btn-light"><i
+                                class="fa fa-line-chart icon-edit-table"></i>
+                            Puesto</button>
+                    </div>
+                </div>
+
+                <!--
                 <div class="row div-spacing">
                     <div class="col-9">
                         <div class="form-inline">
@@ -77,7 +93,23 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
                         </div>
                     </div>
                 </div>
+            -->
             <?php } else { ?>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-plus icono-pequeno-tabla"></i>
+                        <span class="hide-menu text-button-add">&nbsp;Ver más</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button data-toggle="modal" data-target="#exampleModal" class="dropdown-item btn btn-light"><i
+                                class="fa fa-plus icon-edit-table"></i>
+                            Agregar plaza</button>
+                        <button onclick="activityGraphics()" class="dropdown-item btn btn-light"><i
+                                class="fa fa-line-chart icon-edit-table"></i>
+                            Puesto</button>
+                    </div>
+                </div>
+                <!--
                 <div class="row div-spacing">
                     <div class="col-9">
                         <div class="form-inline">
@@ -88,6 +120,7 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
                         </div>
                     </div>
                 </div>
+            -->
             <?php } ?>
 
             <div class="row">
@@ -125,7 +158,7 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header background-modal">
-                <h5 class="modal-title text-modal-tittle">Agregar Plaza</h5>
+                <h5 class="modal-title text-modal-tittle">Agregar plaza</h5>
             </div>
             <div class="modal-body">
                 <div class="alert alert-warning" role="alert">
@@ -141,7 +174,7 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i>
                     Cancelar</button>
-                <a href="#" type="button" class="btn btn-success save-botton-modal"><i
+                <a href="../CentroTrabajo/index.php" type="button" class="btn btn-success save-botton-modal"><i
                         class="fa fa-arrow-circle-right"></i> Ir</a>
             </div>
         </div>
@@ -149,7 +182,29 @@ if (isset($_POST['id_tbl_centro_trabajo_hraes'])) {
 </div>
 <!-- Modal agregar plaza-->
 
-
+<!-- Modal agregar graphics-->
+<div class="modal fade" id="is_modal_graphics" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header background-modal">
+                <h5 class="modal-title text-modal-tittle">Informaci&oacuten de puesto</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="ocultarModalDetallesisGrap();" type="button" class="btn btn-secondary"
+                    data-dismiss="modal"><i class="fas fa-times"></i>
+                    Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="../../../../js/Hraes/Plazas/Busqueda.js"></script>

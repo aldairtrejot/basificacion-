@@ -325,4 +325,19 @@ class modelPlazasHraes
                              WHERE TRIM(UPPER(num_plaza)) = TRIM(UPPER('$numPlaza'));");
         return $listado;
     }
+
+    public function countIdpuestoSN($isValue){
+        $isQuery = pg_query("SELECT COUNT (id_tbl_control_plazas_hraes)
+                             FROM tbl_control_plazas_hraes
+                             WHERE id_cat_puesto_hraes = $isValue;");
+        return $isQuery;
+    }
+
+    public function countIdpuesto($isValue,$idCentro){
+        $isQuery = pg_query("SELECT COUNT (id_tbl_control_plazas_hraes)
+                             FROM tbl_control_plazas_hraes
+                             WHERE id_tbl_centro_trabajo_hraes = $idCentro
+                             AND id_cat_puesto_hraes = $isValue;");
+        return $isQuery;
+    }
 }
