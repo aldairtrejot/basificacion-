@@ -30,7 +30,8 @@ $id_rol = $_SESSION['id_rol'];
    
     <script src="../../../../extra/jquery-351.js"></script>
     <script src="../../../../dist/js/sweetalert2.all.min.js"></script>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     
     <!--
     <link href="../../../../bootstrap/select/docs/docs/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -122,10 +123,8 @@ $id_rol = $_SESSION['id_rol'];
                             </a>
                             <ul class="dropdown-menu">
                                 
-                            <?php if ($id_rol == 1) {?>
                                 <li><a class="dropdown-item" href="../../Hraes/CentroTrabajo/index.php">Centro de
                                         trabajo</a></li>
-                                        <?php } ?>
                                 <li><a class="dropdown-item" href="../../Hraes/Plazas/index.php">Plazas</a></li>
                                 
                                 <li><a class="dropdown-item" href="../../Hraes/Empleados/index.php">Empleados</a></li>

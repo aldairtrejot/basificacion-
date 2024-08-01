@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    //centroTrabajoHraes();
-   // plazasHraes();
+    centroTrabajoHraes();
+   plazasHraes();
     empleadosHraes();
 });
 
